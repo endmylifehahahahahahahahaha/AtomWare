@@ -248,7 +248,7 @@ function API:CreateUI()
 		Position = UDim2.new(0, 15, 0, 15),
 		Size = UDim2.new(1, -60, 0, 35),
 		BackgroundTransparency = 1,
-		Text = "Voidware Installer",
+		Text = "AtomWare Installer",
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		TextSize = 28,
 		Font = Enum.Font.FredokaOne,
@@ -457,14 +457,14 @@ function Installer:InstallFiles(files, dir, download)
 		print("[INSTALLER] Installing files | URL: " .. tostring("https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/main/Installer/" .. dir .. "/" .. file))
 		download.UpdateText("Downloading " .. file .. "...")
 		local content = game:HttpGet("https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/main/Installer/" .. dir .. "/" .. file)
-		for _, folder in pairs({"vape/profiles", "rise/profiles", "vape/libraries", "rise/libraries"}) do
+		for _, folder in pairs({"atomware/profiles", "rise/profiles", "atomware/libraries", "rise/libraries"}) do
 			if not isfolder(folder) then makefolder(folder) end
 		end
-		for _, path in pairs({"vape/profiles/" .. file, "rise/profiles/" .. file}) do
+		for _, path in pairs({"atomware/profiles/" .. file, "rise/profiles/" .. file}) do
 			if isfile(path) then delfile(path) end
 			writefile(path, content)
 		end
-		for _, lib in pairs({"vape/libraries/profilesinstalled3.txt", "vape/libraries/profilesinstalled5.txt", "rise/libraries/profilesinstalled3.txt", "rise/libraries/profilesinstalled5.txt"}) do
+		for _, lib in pairs({"atomware/libraries/profilesinstalled3.txt", "atomware/libraries/profilesinstalled5.txt", "rise/libraries/profilesinstalled3.txt", "rise/libraries/profilesinstalled5.txt"}) do
 			writefile(lib, "true")
 		end
 	end

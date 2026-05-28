@@ -4,7 +4,7 @@ loadstring[[
     getgenv().LPH_JIT_MAX = LPH_JIT_MAX or function(func) return func end
 ]]()
 
-local a=shared.VoidwareLoader or setmetatable({},{
+local a=shared.AtomWareLoader or setmetatable({},{
 __index=function()return function(...)return...end end
 })
 
@@ -17,7 +17,7 @@ name="Internal | run"
 
 
 
-local c=a.VoidwareEvents
+local c=a.AtomWareEvents
 local d=a.Services
 
 
@@ -521,8 +521,8 @@ return Z<_
 end
 }
 
-if not isfolder"vwmeta"then
-makefolder"vwmeta"
+if not isfolder"atomware-meta"then
+makefolder"atomware-meta"
 end
 local W=shared.META_COMMIT or"main"
 local X=W
@@ -545,8 +545,8 @@ local Z=shared.ACTIVE_LOADER or Y
 
 local _
 _=function(aa,ab)
-if not isfolder"vwmeta"then
-makefolder"vwmeta"
+if not isfolder"atomware-meta"then
+makefolder"atomware-meta"
 end
 Z:Update(`Loading META {aa}.json`,40)
 local ac
@@ -570,7 +570,7 @@ return _(aa,"http")
 else
 errorNotification(
 "Meta Loading Failure",
-`Failure loading {aa}.json! Voidware might not function properly :c Try restarting later`,
+`Failure loading {aa}.json! AtomWare might not function properly :c Try restarting later`,
 7
 )
 return setmetatable({},{

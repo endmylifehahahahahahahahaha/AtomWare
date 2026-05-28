@@ -16,8 +16,8 @@ local delfile = delfile or function(file)
 	writefile(file, "")
 end
 
-if shared.VoidDev then
-	shared.VapeDeveloper = shared.VoidDev
+if shared.AtomDev then
+	shared.VapeDeveloper = shared.AtomDev
 end
 
 local CEMode
@@ -170,13 +170,13 @@ if CEMode then
 	else
 		getgenv().setthreadidentity = function() end
 	end
-	warn(`[CEMode]: Voidware Cheat Engine mode overwrite done`)
+	warn(`[CEMode]: AtomWare Cheat Engine mode overwrite done`)
 end
 
 shared.CheatEngineMode = CEMode
 
 local function wipeFolder(path)
-	if shared.VoidDev then
+	if shared.AtomDev then
 		return
 	end
 	if not isfolder(path) then
@@ -203,16 +203,16 @@ local smf = function(id, core)
 					return
 				end
 				pcall(function()
-					setclipboard("discord.gg/voidware")
+					setclipboard("discord.gg/atomware")
 					game:GetService("StarterGui"):SetCore("SendNotification", {
-						Title = "Voidware Bedwars",
-						Text = "discord.gg/voidware copied to your clipboard!",
+						Title = "AtomWare Bedwars",
+						Text = "discord.gg/atomware copied to your clipboard!",
 						Duration = 5,
 					})
 				end)
 			end
 			game:GetService("StarterGui"):SetCore("SendNotification", {
-				Title = "Voidware Bedwars",
+				Title = "AtomWare Bedwars",
 				Text = "Your executor's file system doesn't work! Try reinstalling it or join the discord server for support :c",
 				Button1 = "Join Discord Server",
 				Button2 = "Ok",
@@ -223,12 +223,12 @@ local smf = function(id, core)
 		error("Executor File System Error")
 	end
 end
-for _, corefolder in { "vape", "vwmeta" } do
+for _, corefolder in { "atomware", "atomware-meta" } do
 	if not isfolder(corefolder) then
 		smf(corefolder, true)
 	end
 end
-for _, folder in { "vape/games", "vape/profiles", "vape/assets", "vape/libraries", "vape/guis" } do
+for _, folder in { "atomware/games", "atomware/profiles", "atomware/assets", "atomware/libraries", "atomware/guis" } do
 	if not isfolder(folder) then
 		smf(folder)
 	end
@@ -240,13 +240,13 @@ local PRODUCTION_COMMIT = "cb71920ef6c3d0160a4457148a536e915934f586"
 local commit = shared.CustomCommit or (shared.TestingMode or shared.StagingMode) and TESTING_COMMIT or PRODUCTION_COMMIT
 shared.VOIDWARE_SCRIPT_TYPE = "BEDWARS_REWRITE_NEW"
 shared.META_COMMIT = "a109a0a4441e42d497fa7e3cdc04d770dd853a04"
-if (isfile("vape/profiles/commit.txt") and readfile("vape/profiles/commit.txt") or "") ~= commit then
-	wipeFolder("vape")
-	wipeFolder("vape/games")
-	wipeFolder("vape/guis")
-	wipeFolder("vape/libraries")
+if (isfile("atomware/profiles/commit.txt") and readfile("atomware/profiles/commit.txt") or "") ~= commit then
+	wipeFolder("atomware")
+	wipeFolder("atomware/games")
+	wipeFolder("atomware/guis")
+	wipeFolder("atomware/libraries")
 end
-writefile("vape/profiles/commit.txt", commit)
+writefile("atomware/profiles/commit.txt", commit)
 --end
 
 local SAVE_BLACKLISTED = setmetatable({
@@ -254,7 +254,7 @@ local SAVE_BLACKLISTED = setmetatable({
 	__cache = {},
 }, {
 	__call = function(self, key)
-		if shared.VoidDev then
+		if shared.AtomDev then
 			return false
 		end
 
@@ -279,22 +279,22 @@ local SAVE_BLACKLISTED = setmetatable({
 })
 local function downloadFile(path, func)
 	if not isfile(path) or SAVE_BLACKLISTED(path) then
-		if shared.VoidwareBedwarsLoadingDebug then
+		if shared.AtomWareBedwarsLoadingDebug then
 			warn(
 				"downloadFile",
 				path,
 				"https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/"
-					.. readfile("vape/profiles/commit.txt")
+					.. readfile("atomware/profiles/commit.txt")
 					.. "/"
-					.. select(1, path:gsub("vape/", ""))
+					.. select(1, path:gsub("atomware/", ""))
 			)
 		end
 		local suc, res = pcall(function()
 			return game:HttpGet(
 				"https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/"
-					.. readfile("vape/profiles/commit.txt")
+					.. readfile("atomware/profiles/commit.txt")
 					.. "/"
-					.. select(1, path:gsub("vape/", "")),
+					.. select(1, path:gsub("atomware/", "")),
 				true
 			)
 		end)
@@ -314,7 +314,7 @@ local function downloadFile(path, func)
 	return (func or readfile)(path)
 end
 
-if shared.VoidDev then
+if shared.AtomDev then
 	shared.DEBUG_COUNT = shared.DEBUG_COUNT or 0
 	shared.DEBUG_COUNT = shared.DEBUG_COUNT + 1
 	warn(`DEBUG COUNT: {tostring(shared.DEBUG_COUNT)}`)
@@ -325,7 +325,7 @@ getgenv().pload = function(name, id, found)
 	if name:find(".lua") or name:find(".json") then
 		part = ""
 	end
-	if shared.VoidwareBedwarsObfuscationDebug and shared.VoidDev then
+	if shared.AtomWareBedwarsObfuscationDebug and shared.AtomDev then
 		if name:find("/") then
 			local parts = name:split("/")
 			local last = parts[#parts]
@@ -336,23 +336,23 @@ getgenv().pload = function(name, id, found)
 			for i, v in parts do
 				resolved = resolved .. v .. (i == #parts and "" or "/")
 			end
-			if isfile(`vape/{resolved}{part}`) then
+			if isfile(`atomware/{resolved}{part}`) then
 				warn(`[Obfuscation-Debug]: [1] Loading file ({tostring(resolved)}{part})!`)
 				name = resolved
 			end
 		else
 			local resolved = "obfuscated_" .. name
-			if isfile(`vape/{resolved}{part}`) then
+			if isfile(`atomware/{resolved}{part}`) then
 				warn(`[Obfuscation-Debug]: [2] Loading file ({tostring(resolved)}{part})!`)
 				name = resolved
 			end
 		end
 	end
-	if shared.VoidwareBedwarsLoadingDebug then
-		print(`vape/{name}{part}`)
+	if shared.AtomWareBedwarsLoadingDebug then
+		print(`atomware/{name}{part}`)
 	end
 	local suc, download = pcall(function()
-		return downloadFile(`vape/{name}{part}`), (id or name)
+		return downloadFile(`atomware/{name}{part}`), (id or name)
 	end)
 	if not suc and found then
 		warn(`Load Error: [{tostring(id or name)}] {download}`)
@@ -386,7 +386,7 @@ getgenv().pload = function(name, id, found)
 		end
 		error(`Failure Loading {tostring(id or name)} [3]`)
 	end
-	if shared.VoidwareBedwarsLoadingDebug then
+	if shared.AtomWareBedwarsLoadingDebug then
 		print(name, suc, res)
 	end
 	return suc and res

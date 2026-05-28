@@ -1,5 +1,5 @@
-local a=shared.VoidwareLoader
-assert(a~=nil and type(a)=="table","[GuiLibrary]: VoidwareLoader is invalid :c")
+local a=shared.AtomWareLoader
+assert(a~=nil and type(a)=="table","[GuiLibrary]: AtomWareLoader is invalid :c")
 local b=a:setupDecoratedCustomSignal"GUILIBRARY_INTERNAL"
 local c=function(c)
 return b(`TOGGLE_CUSTOM_SIGNAL_{tostring(c)}`)
@@ -355,7 +355,7 @@ end
 d.wrap=wrap
 
 local function connectDoubleClick(q,r,t)
-if not shared.VoidDev then return end
+if not shared.AtomDev then return end
 local u=0
 t=t or 0.25
 if not(r~=nil and type(r)=="function")then
@@ -542,70 +542,70 @@ local B
 local C
 
 local D={
-["vape/assets/new/add.png"]="rbxassetid://14368300605",
-["vape/assets/new/alert.png"]="rbxassetid://14368301329",
-["vape/assets/new/allowedicon.png"]="rbxassetid://14368302000",
-["vape/assets/new/allowedtab.png"]="rbxassetid://14368302875",
-["vape/assets/new/arrowmodule.png"]="rbxassetid://14473354880",
-["vape/assets/new/back.png"]="rbxassetid://14368303894",
-["vape/assets/new/bind.png"]="rbxassetid://14368304734",
-["vape/assets/new/bindbkg.png"]="rbxassetid://14368305655",
-["vape/assets/new/blatanticon.png"]="rbxassetid://14368306745",
-["vape/assets/new/blockedicon.png"]="rbxassetid://14385669108",
-["vape/assets/new/blockedtab.png"]="rbxassetid://14385672881",
-["vape/assets/new/blur.png"]="rbxassetid://14898786664",
-["vape/assets/new/blurnotif.png"]="rbxassetid://16738720137",
-["vape/assets/new/close.png"]="rbxassetid://14368309446",
-["vape/assets/new/closemini.png"]="rbxassetid://14368310467",
-["vape/assets/new/colorpreview.png"]="rbxassetid://14368311578",
-["vape/assets/new/combaticon.png"]="rbxassetid://14368312652",
-["vape/assets/new/customsettings.png"]="rbxassetid://14403726449",
-["vape/assets/new/discord.png"]="",
-["vape/assets/new/dots.png"]="rbxassetid://14368314459",
-["vape/assets/new/edit.png"]="rbxassetid://14368315443",
-["vape/assets/new/expandicon.png"]="rbxassetid://14368353032",
-["vape/assets/new/expandright.png"]="rbxassetid://14368316544",
-["vape/assets/new/expandup.png"]="rbxassetid://14368317595",
-["vape/assets/new/friendstab.png"]="rbxassetid://14397462778",
-["vape/assets/new/guisettings.png"]="rbxassetid://14368318994",
-["vape/assets/new/guislider.png"]="rbxassetid://14368320020",
-["vape/assets/new/guisliderrain.png"]="rbxassetid://14368321228",
-["vape/assets/new/guiv4.png"]="rbxassetid://14368322199",
-["vape/assets/new/guivape.png"]="rbxassetid://14657521312",
-["vape/assets/new/info.png"]="rbxassetid://14368324807",
-["vape/assets/new/inventoryicon.png"]="rbxassetid://14928011633",
-["vape/assets/new/legit.png"]="rbxassetid://14425650534",
-["vape/assets/new/legittab.png"]="rbxassetid://14426740825",
-["vape/assets/new/miniicon.png"]="rbxassetid://14368326029",
-["vape/assets/new/notification.png"]="rbxassetid://16738721069",
-["vape/assets/new/overlaysicon.png"]="rbxassetid://14368339581",
-["vape/assets/new/overlaystab.png"]="rbxassetid://14397380433",
-["vape/assets/new/pin.png"]="rbxassetid://14368342301",
-["vape/assets/new/profilesicon.png"]="rbxassetid://14397465323",
-["vape/assets/new/radaricon.png"]="rbxassetid://14368343291",
-["vape/assets/new/rainbow_1.png"]="rbxassetid://14368344374",
-["vape/assets/new/rainbow_2.png"]="rbxassetid://14368345149",
-["vape/assets/new/rainbow_3.png"]="rbxassetid://14368345840",
-["vape/assets/new/rainbow_4.png"]="rbxassetid://14368346696",
-["vape/assets/new/range.png"]="rbxassetid://14368347435",
-["vape/assets/new/rangearrow.png"]="rbxassetid://14368348640",
-["vape/assets/new/rendericon.png"]="rbxassetid://14368350193",
-["vape/assets/new/rendertab.png"]="rbxassetid://14397373458",
-["vape/assets/new/search.png"]="rbxassetid://14425646684",
-["vape/assets/new/targetinfoicon.png"]="rbxassetid://14368354234",
-["vape/assets/new/targetnpc1.png"]="rbxassetid://14497400332",
-["vape/assets/new/targetnpc2.png"]="rbxassetid://14497402744",
-["vape/assets/new/targetplayers1.png"]="rbxassetid://14497396015",
-["vape/assets/new/targetplayers2.png"]="rbxassetid://14497397862",
-["vape/assets/new/targetstab.png"]="rbxassetid://14497393895",
-["vape/assets/new/textguiicon.png"]="rbxassetid://14368355456",
-["vape/assets/new/textv4.png"]="rbxassetid://14368357095",
-["vape/assets/new/textvape.png"]="rbxassetid://14368358200",
-["vape/assets/new/utilityicon.png"]="rbxassetid://14368359107",
-["vape/assets/new/vape.png"]="rbxassetid://14373395239",
-["vape/assets/new/warning.png"]="rbxassetid://14368361552",
-["vape/assets/new/worldicon.png"]="rbxassetid://14368362492",
-["vape/assets/new/star.png"]="rbxassetid://137405505909578"
+["atomware/assets/new/add.png"]="rbxassetid://14368300605",
+["atomware/assets/new/alert.png"]="rbxassetid://14368301329",
+["atomware/assets/new/allowedicon.png"]="rbxassetid://14368302000",
+["atomware/assets/new/allowedtab.png"]="rbxassetid://14368302875",
+["atomware/assets/new/arrowmodule.png"]="rbxassetid://14473354880",
+["atomware/assets/new/back.png"]="rbxassetid://14368303894",
+["atomware/assets/new/bind.png"]="rbxassetid://14368304734",
+["atomware/assets/new/bindbkg.png"]="rbxassetid://14368305655",
+["atomware/assets/new/blatanticon.png"]="rbxassetid://14368306745",
+["atomware/assets/new/blockedicon.png"]="rbxassetid://14385669108",
+["atomware/assets/new/blockedtab.png"]="rbxassetid://14385672881",
+["atomware/assets/new/blur.png"]="rbxassetid://14898786664",
+["atomware/assets/new/blurnotif.png"]="rbxassetid://16738720137",
+["atomware/assets/new/close.png"]="rbxassetid://14368309446",
+["atomware/assets/new/closemini.png"]="rbxassetid://14368310467",
+["atomware/assets/new/colorpreview.png"]="rbxassetid://14368311578",
+["atomware/assets/new/combaticon.png"]="rbxassetid://14368312652",
+["atomware/assets/new/customsettings.png"]="rbxassetid://14403726449",
+["atomware/assets/new/discord.png"]="",
+["atomware/assets/new/dots.png"]="rbxassetid://14368314459",
+["atomware/assets/new/edit.png"]="rbxassetid://14368315443",
+["atomware/assets/new/expandicon.png"]="rbxassetid://14368353032",
+["atomware/assets/new/expandright.png"]="rbxassetid://14368316544",
+["atomware/assets/new/expandup.png"]="rbxassetid://14368317595",
+["atomware/assets/new/friendstab.png"]="rbxassetid://14397462778",
+["atomware/assets/new/guisettings.png"]="rbxassetid://14368318994",
+["atomware/assets/new/guislider.png"]="rbxassetid://14368320020",
+["atomware/assets/new/guisliderrain.png"]="rbxassetid://14368321228",
+["atomware/assets/new/guiv4.png"]="rbxassetid://14368322199",
+["atomware/assets/new/guivape.png"]="rbxassetid://14657521312",
+["atomware/assets/new/info.png"]="rbxassetid://14368324807",
+["atomware/assets/new/inventoryicon.png"]="rbxassetid://14928011633",
+["atomware/assets/new/legit.png"]="rbxassetid://14425650534",
+["atomware/assets/new/legittab.png"]="rbxassetid://14426740825",
+["atomware/assets/new/miniicon.png"]="rbxassetid://14368326029",
+["atomware/assets/new/notification.png"]="rbxassetid://16738721069",
+["atomware/assets/new/overlaysicon.png"]="rbxassetid://14368339581",
+["atomware/assets/new/overlaystab.png"]="rbxassetid://14397380433",
+["atomware/assets/new/pin.png"]="rbxassetid://14368342301",
+["atomware/assets/new/profilesicon.png"]="rbxassetid://14397465323",
+["atomware/assets/new/radaricon.png"]="rbxassetid://14368343291",
+["atomware/assets/new/rainbow_1.png"]="rbxassetid://14368344374",
+["atomware/assets/new/rainbow_2.png"]="rbxassetid://14368345149",
+["atomware/assets/new/rainbow_3.png"]="rbxassetid://14368345840",
+["atomware/assets/new/rainbow_4.png"]="rbxassetid://14368346696",
+["atomware/assets/new/range.png"]="rbxassetid://14368347435",
+["atomware/assets/new/rangearrow.png"]="rbxassetid://14368348640",
+["atomware/assets/new/rendericon.png"]="rbxassetid://14368350193",
+["atomware/assets/new/rendertab.png"]="rbxassetid://14397373458",
+["atomware/assets/new/search.png"]="rbxassetid://14425646684",
+["atomware/assets/new/targetinfoicon.png"]="rbxassetid://14368354234",
+["atomware/assets/new/targetnpc1.png"]="rbxassetid://14497400332",
+["atomware/assets/new/targetnpc2.png"]="rbxassetid://14497402744",
+["atomware/assets/new/targetplayers1.png"]="rbxassetid://14497396015",
+["atomware/assets/new/targetplayers2.png"]="rbxassetid://14497397862",
+["atomware/assets/new/targetstab.png"]="rbxassetid://14497393895",
+["atomware/assets/new/textguiicon.png"]="rbxassetid://14368355456",
+["atomware/assets/new/textv4.png"]="rbxassetid://14368357095",
+["atomware/assets/new/textvape.png"]="rbxassetid://14368358200",
+["atomware/assets/new/utilityicon.png"]="rbxassetid://14368359107",
+["atomware/assets/new/vape.png"]="rbxassetid://14373395239",
+["atomware/assets/new/warning.png"]="rbxassetid://14368361552",
+["atomware/assets/new/worldicon.png"]="rbxassetid://14368362492",
+["atomware/assets/new/star.png"]="rbxassetid://137405505909578"
 }
 
 local E=isfile
@@ -642,7 +642,7 @@ I.Name="Blur"
 I.Size=UDim2.new(1,89,1,52)
 I.Position=UDim2.fromOffset(-48,-31)
 I.BackgroundTransparency=1
-I.Image=v("vape/assets/new/"..(H and"blurnotif"or"blur")..".png")
+I.Image=v("atomware/assets/new/"..(H and"blurnotif"or"blur")..".png")
 I.ScaleType=Enum.ScaleType.Slice
 I.SliceCenter=Rect.new(52,31,261,502)
 I.Parent=G
@@ -666,7 +666,7 @@ I.Position=UDim2.new(1,-35,0,H or 9)
 I.BackgroundColor3=Color3.new(1,1,1)
 I.BackgroundTransparency=1
 I.AutoButtonColor=false
-I.Image=v"vape/assets/new/close.png"
+I.Image=v"atomware/assets/new/close.png"
 I.ImageColor3=n.Light(p.Text,0.2)
 I.ImageTransparency=0.5
 I.Parent=G
@@ -867,7 +867,7 @@ if J==nil then
 J=false
 K="TIMEOUT_EXCEEDED"
 end
-if not J and shared.VoidDev then
+if not J and shared.AtomDev then
 warn(debug.traceback(K))
 end
 if I~=nil then
@@ -880,7 +880,7 @@ local H=shared.CACHED_ICON_LIBRARY
 if not H then
 G(function()
 local I,J=pcall(function()
-local I=loadstring(d.http_function"https://raw.githubusercontent.com/Footagesus/Icons/main/Main-v2.lua")()
+local I=loadstring(d.http_function"https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/master/Icons/Main-v2.lua")()
 I.SetIconsType"lucide"
 return I
 end)
@@ -1088,7 +1088,7 @@ return I:gsub("<[^<>]->","")
 end
 
 do
-local I=E"vape/profiles/color.txt"and loadJson"vape/profiles/color.txt"
+local I=E"atomware/profiles/color.txt"and loadJson"atomware/profiles/color.txt"
 if I then
 p.Main=I.Main and Color3.fromRGB(unpack(I.Main))or p.Main
 p.Text=I.Text and Color3.fromRGB(unpack(I.Text))or p.Text
@@ -1470,7 +1470,7 @@ U.Name="Preview"
 U.Size=UDim2.fromOffset(12,12)
 U.Position=UDim2.new(1,-22,0,10)
 U.BackgroundTransparency=1
-U.Image=v"vape/assets/new/colorpreview.png"
+U.Image=v"atomware/assets/new/colorpreview.png"
 U.ImageColor3=Color3.fromHSV(M.Hue,M.Sat,M.Value)
 U.ImageTransparency=1-M.Opacity
 U.Parent=N
@@ -1491,7 +1491,7 @@ W.Name="Expand"
 W.Size=UDim2.fromOffset(9,5)
 W.Position=UDim2.fromOffset(4,4)
 W.BackgroundTransparency=1
-W.Image=v"vape/assets/new/expandicon.png"
+W.Image=v"atomware/assets/new/expandicon.png"
 W.ImageColor3=n.Dark(p.Text,0.43)
 W.Parent=V
 local X=Instance.new"TextButton"
@@ -1504,17 +1504,17 @@ X.Parent=N
 local Y=Instance.new"ImageLabel"
 Y.Size=UDim2.fromOffset(12,12)
 Y.BackgroundTransparency=1
-Y.Image=v"vape/assets/new/rainbow_1.png"
+Y.Image=v"atomware/assets/new/rainbow_1.png"
 Y.ImageColor3=n.Light(p.Main,0.37)
 Y.Parent=X
 local Z=Y:Clone()
-Z.Image=v"vape/assets/new/rainbow_2.png"
+Z.Image=v"atomware/assets/new/rainbow_2.png"
 Z.Parent=X
 local _=Y:Clone()
-_.Image=v"vape/assets/new/rainbow_3.png"
+_.Image=v"atomware/assets/new/rainbow_3.png"
 _.Parent=X
 local aa=Y:Clone()
-aa.Image=v"vape/assets/new/rainbow_4.png"
+aa.Image=v"atomware/assets/new/rainbow_4.png"
 aa.Parent=X
 local ab=Instance.new"Frame"
 ab.Name="Knob"
@@ -1588,7 +1588,7 @@ end
 
 function M.ConnectCallback(ag,ah)
 if not(ah~=nil and type(ah)=="function")then return end
-if M._InternalCallback and shared.VoidDev then
+if M._InternalCallback and shared.AtomDev then
 warn(debug.traceback(`Overriding InternalCallback!!!`))
 end
 M._InternalCallback=wrap(ah)
@@ -1863,7 +1863,7 @@ ak.Name="Arrow"
 ak.Size=UDim2.fromOffset(4,8)
 ak.Position=UDim2.new(1,-17,0,11)
 ak.BackgroundTransparency=1
-ak.Image=v"vape/assets/new/expandright.png"
+ak.Image=v"atomware/assets/new/expandright.png"
 ak.ImageColor3=Color3.fromRGB(140,140,140)
 ak.Rotation=90
 ak.Parent=ai
@@ -2483,7 +2483,7 @@ K.Name="Icon"
 K.Size=UDim2.fromOffset(18,12)
 K.Position=UDim2.fromOffset(10,15)
 K.BackgroundTransparency=1
-K.Image=v"vape/assets/new/targetstab.png"
+K.Image=v"atomware/assets/new/targetstab.png"
 K.Parent=J
 local L=Instance.new"TextLabel"
 L.Name="Title"
@@ -2546,20 +2546,20 @@ end
 
 ad.Players=I.TargetsButton({
 Position=UDim2.fromOffset(11,45),
-Icon=v"vape/assets/new/targetplayers1.png",
+Icon=v"atomware/assets/new/targetplayers1.png",
 IconSize=UDim2.fromOffset(15,16),
 IconParent=aj,
-ToolIcon=v"vape/assets/new/targetplayers2.png",
+ToolIcon=v"atomware/assets/new/targetplayers2.png",
 ToolSize=UDim2.fromOffset(11,12),
 Tooltip="Players",
 Function=aa.Function,
 },J,aj)
 ad.NPCs=I.TargetsButton({
 Position=UDim2.fromOffset(112,45),
-Icon=v"vape/assets/new/targetnpc1.png",
+Icon=v"atomware/assets/new/targetnpc1.png",
 IconSize=UDim2.fromOffset(12,16),
 IconParent=aj,
-ToolIcon=v"vape/assets/new/targetnpc2.png",
+ToolIcon=v"atomware/assets/new/targetnpc2.png",
 ToolSize=UDim2.fromOffset(9,12),
 Tooltip="NPCs",
 Function=aa.Function,
@@ -2851,7 +2851,7 @@ ah.Name="Icon"
 ah.Size=UDim2.fromOffset(14,12)
 ah.Position=UDim2.fromOffset(10,14)
 ah.BackgroundTransparency=1
-ah.Image=aa.Icon or v"vape/assets/new/allowedicon.png"
+ah.Image=aa.Icon or v"atomware/assets/new/allowedicon.png"
 ah.Parent=ag
 local ai=Instance.new"TextLabel"
 ai.Name="Title"
@@ -2905,7 +2905,7 @@ O.Name="Icon"
 O.Size=aa.TabSize or UDim2.fromOffset(19,16)
 O.Position=UDim2.fromOffset(10,13)
 O.BackgroundTransparency=1
-O.Image=aa.Tab or v"vape/assets/new/allowedtab.png"
+O.Image=aa.Tab or v"atomware/assets/new/allowedtab.png"
 O.Parent=N
 local P=Instance.new"TextLabel"
 P.Name="Title"
@@ -2949,7 +2949,7 @@ U.Name="AddButton"
 U.Size=UDim2.fromOffset(16,16)
 U.Position=UDim2.new(1,-26,0,8)
 U.BackgroundTransparency=1
-U.Image=v"vape/assets/new/add.png"
+U.Image=v"atomware/assets/new/add.png"
 U.ImageColor3=aa.Color
 U.ImageTransparency=0.3
 U.Parent=R
@@ -3184,7 +3184,7 @@ aw.Position=UDim2.new(1,-26,0,8)
 aw.BackgroundColor3=Color3.new(1,1,1)
 aw.BackgroundTransparency=1
 aw.AutoButtonColor=false
-aw.Image=v"vape/assets/new/closemini.png"
+aw.Image=v"atomware/assets/new/closemini.png"
 aw.ImageColor3=n.Light(p.Text,0.2)
 aw.ImageTransparency=0.5
 aw.Parent=as
@@ -3549,7 +3549,7 @@ an.Size=UDim2.fromOffset(9,16)
 an.Position=UDim2.fromScale(0.5,0.5)
 an.AnchorPoint=Vector2.new(0.5,0.5)
 an.BackgroundTransparency=1
-an.Image=v"vape/assets/new/range.png"
+an.Image=v"atomware/assets/new/range.png"
 an.ImageColor3=Color3.fromHSV(d.GUIColor.Hue,d.GUIColor.Sat,d.GUIColor.Value)
 an.Parent=am
 local ao=am:Clone()
@@ -3562,7 +3562,7 @@ ap.Name="Arrow"
 ap.Size=UDim2.fromOffset(12,6)
 ap.Position=UDim2.new(1,-56,0,10)
 ap.BackgroundTransparency=1
-ap.Image=v"vape/assets/new/rangearrow.png"
+ap.Image=v"atomware/assets/new/rangearrow.png"
 ap.ImageColor3=n.Light(p.Main,0.14)
 ap.Parent=ae
 aa.Function=aa.Function or function()end
@@ -3824,7 +3824,7 @@ ad.Name="VapeLogo"
 ad.Size=UDim2.fromOffset(62,18)
 ad.Position=UDim2.fromOffset(11,10)
 ad.BackgroundTransparency=1
-ad.Image=v"vape/assets/new/guivape.png"
+ad.Image=v"atomware/assets/new/guivape.png"
 ad.ImageColor3=select(3,p.Main:ToHSV())>0.5 and p.Text or Color3.new(1,1,1)
 ad.Parent=ac
 local ae=Instance.new"ImageLabel"
@@ -3832,7 +3832,7 @@ ae.Name="V4Logo"
 ae.Size=UDim2.fromOffset(28,16)
 ae.Position=UDim2.new(1,1,0,1)
 ae.BackgroundTransparency=1
-ae.Image=v"vape/assets/new/guiv4.png"
+ae.Image=v"atomware/assets/new/guiv4.png"
 ae.Parent=ad
 local af=Instance.new"Frame"
 af.Name="Children"
@@ -3856,14 +3856,14 @@ local ai=Instance.new"ImageLabel"
 ai.Size=UDim2.fromOffset(14,14)
 ai.Position=UDim2.fromOffset(15,12)
 ai.BackgroundTransparency=1
-ai.Image=v"vape/assets/new/guisettings.png"
+ai.Image=v"atomware/assets/new/guisettings.png"
 ai.ImageColor3=n.Light(p.Main,0.37)
 ai.Parent=ah
 local aj=Instance.new"ImageButton"
 aj.Size=UDim2.fromOffset(16,16)
 aj.Position=UDim2.new(1,-56,0,11)
 aj.BackgroundTransparency=1
-aj.Image=v"vape/assets/new/discord.png"
+aj.Image=v"atomware/assets/new/discord.png"
 aj.Parent=ac
 addTooltip(aj,"Join discord")
 local ak=Instance.new"TextButton"
@@ -3890,7 +3890,7 @@ an.Name="Back"
 an.Size=UDim2.fromOffset(16,16)
 an.Position=UDim2.fromOffset(11,13)
 an.BackgroundTransparency=1
-an.Image=v"vape/assets/new/back.png"
+an.Image=v"atomware/assets/new/back.png"
 an.ImageColor3=n.Light(p.Main,0.37)
 an.Parent=ak
 local ao=Instance.new"TextLabel"
@@ -3901,7 +3901,7 @@ ao.BackgroundTransparency=1
 ao.Text="Vape "
 ..d.Version
 .." "
-..(E"vape/profiles/commit.txt"and readfile"vape/profiles/commit.txt":sub(1,6)or"")
+..(E"atomware/profiles/commit.txt"and readfile"atomware/profiles/commit.txt":sub(1,6)or"")
 .." "
 ao.TextColor3=n.Dark(p.Text,0.43)
 ao.TextXAlignment=Enum.TextXAlignment.Right
@@ -3955,7 +3955,7 @@ av.Name="Icon"
 av.Size=UDim2.fromOffset(12,12)
 av.Position=UDim2.new(0.5,-6,0,5)
 av.BackgroundTransparency=1
-av.Image=v"vape/assets/new/bind.png"
+av.Image=v"atomware/assets/new/bind.png"
 av.ImageColor3=n.Dark(p.Text,0.43)
 av.Parent=au
 local aw=Instance.new"TextLabel"
@@ -3988,13 +3988,13 @@ end
 au.MouseEnter:Connect(function()
 aw.Visible=false
 av.Visible=not aw.Visible
-av.Image=v"vape/assets/new/edit.png"
+av.Image=v"atomware/assets/new/edit.png"
 av.ImageColor3=n.Dark(p.Text,0.16)
 end)
 au.MouseLeave:Connect(function()
 aw.Visible=true
 av.Visible=not aw.Visible
-av.Image=v"vape/assets/new/bind.png"
+av.Image=v"atomware/assets/new/bind.png"
 av.ImageColor3=n.Dark(p.Text,0.43)
 end)
 au.Activated:Connect(function()
@@ -4059,7 +4059,7 @@ aw.Name="Arrow"
 aw.Size=UDim2.fromOffset(4,8)
 aw.Position=UDim2.new(1,-20,0,16)
 aw.BackgroundTransparency=1
-aw.Image=v"vape/assets/new/expandright.png"
+aw.Image=v"atomware/assets/new/expandright.png"
 aw.ImageColor3=n.Light(p.Main,0.37)
 aw.Parent=au
 at.Name=as.Name
@@ -4137,7 +4137,7 @@ au.Size=UDim2.fromOffset(24,24)
 au.Position=UDim2.new(1,-29,0,7)
 au.BackgroundTransparency=1
 au.AutoButtonColor=false
-au.Image=v"vape/assets/new/overlaysicon.png"
+au.Image=v"atomware/assets/new/overlaysicon.png"
 au.ImageColor3=n.Light(p.Main,0.37)
 au.Parent=at
 addCorner(au,UDim.new(1,0))
@@ -4164,7 +4164,7 @@ ax.Name="Icon"
 ax.Size=UDim2.fromOffset(14,12)
 ax.Position=UDim2.fromOffset(10,13)
 ax.BackgroundTransparency=1
-ax.Image=v"vape/assets/new/overlaystab.png"
+ax.Image=v"atomware/assets/new/overlaystab.png"
 ax.ImageColor3=p.Text
 ax.Parent=aw
 local ay=Instance.new"TextLabel"
@@ -4357,7 +4357,7 @@ av.Name="Arrow"
 av.Size=UDim2.fromOffset(4,8)
 av.Position=UDim2.new(1,-20,0,16)
 av.BackgroundTransparency=1
-av.Image=v"vape/assets/new/expandright.png"
+av.Image=v"atomware/assets/new/expandright.png"
 av.ImageColor3=n.Light(p.Main,0.37)
 av.Parent=au
 local aw=Instance.new"TextButton"
@@ -4384,7 +4384,7 @@ az.Name="Back"
 az.Size=UDim2.fromOffset(16,16)
 az.Position=UDim2.fromOffset(11,13)
 az.BackgroundTransparency=1
-az.Image=v"vape/assets/new/back.png"
+az.Image=v"atomware/assets/new/back.png"
 az.ImageColor3=n.Light(p.Main,0.37)
 az.Parent=aw
 addCorner(aw)
@@ -4643,7 +4643,7 @@ aA.Name="Preview"
 aA.Size=UDim2.fromOffset(12,12)
 aA.Position=UDim2.new(1,-22,0,10)
 aA.BackgroundTransparency=1
-aA.Image=v"vape/assets/new/colorpreview.png"
+aA.Image=v"atomware/assets/new/colorpreview.png"
 aA.ImageColor3=Color3.fromHSV(at.Hue,1,1)
 aA.Parent=aw
 local J=Instance.new"TextBox"
@@ -4671,7 +4671,7 @@ L.Name="Expand"
 L.Size=UDim2.fromOffset(9,5)
 L.Position=UDim2.fromOffset(4,4)
 L.BackgroundTransparency=1
-L.Image=v"vape/assets/new/expandicon.png"
+L.Image=v"atomware/assets/new/expandicon.png"
 L.ImageColor3=n.Dark(p.Text,0.43)
 L.Parent=K
 local M=Instance.new"TextButton"
@@ -4684,24 +4684,24 @@ M.Parent=aw
 local N=Instance.new"ImageLabel"
 N.Size=UDim2.fromOffset(12,12)
 N.BackgroundTransparency=1
-N.Image=v"vape/assets/new/rainbow_1.png"
+N.Image=v"atomware/assets/new/rainbow_1.png"
 N.ImageColor3=n.Light(p.Main,0.37)
 N.Parent=M
 local O=N:Clone()
-O.Image=v"vape/assets/new/rainbow_2.png"
+O.Image=v"atomware/assets/new/rainbow_2.png"
 O.Parent=M
 local P=N:Clone()
-P.Image=v"vape/assets/new/rainbow_3.png"
+P.Image=v"atomware/assets/new/rainbow_3.png"
 P.Parent=M
 local Q=N:Clone()
-Q.Image=v"vape/assets/new/rainbow_4.png"
+Q.Image=v"atomware/assets/new/rainbow_4.png"
 Q.Parent=M
 local R=Instance.new"ImageLabel"
 R.Name="Knob"
 R.Size=UDim2.fromOffset(26,12)
 R.Position=UDim2.fromOffset(av[4]-3,-5)
 R.BackgroundTransparency=1
-R.Image=v"vape/assets/new/guislider.png"
+R.Image=v"atomware/assets/new/guislider.png"
 R.ImageColor3=au[4]
 R.Parent=ay
 as.Function=as.Function or function()end
@@ -4724,8 +4724,8 @@ ColorSequenceKeypoint.new(0,Color3.fromHSV(0,0,0)),
 ColorSequenceKeypoint.new(1,Color3.fromHSV(at.Hue,at.Sat,1)),
 }
 )
-local W=v"vape/assets/new/guislider.png"
-local X=v"vape/assets/new/guisliderrain.png"
+local W=v"atomware/assets/new/guislider.png"
+local X=v"atomware/assets/new/guisliderrain.png"
 local Y
 
 function at.Save(Z,_)
@@ -4999,7 +4999,7 @@ end)
 
 task.spawn(function()
 A.Text="Copied!"
-setclipboard"https://discord.gg/voidware"
+setclipboard"https://discord.gg/atomware"
 end)
 end)
 ah.MouseEnter:Connect(function()
@@ -5086,7 +5086,7 @@ ai.Size=UDim2.fromOffset(9,4)
 
 ai.Position=UDim2.new(0.9,0,0,18)
 ai.BackgroundTransparency=1
-ai.Image=v"vape/assets/new/expandup.png"
+ai.Image=v"atomware/assets/new/expandup.png"
 ai.ImageColor3=Color3.fromRGB(140,140,140)
 ai.Rotation=180
 ai.Parent=ag
@@ -5217,7 +5217,7 @@ av.Name="Icon"
 av.Size=UDim2.fromOffset(12,12)
 av.Position=UDim2.new(0.5,-6,0,5)
 av.BackgroundTransparency=1
-av.Image=v"vape/assets/new/bind.png"
+av.Image=v"atomware/assets/new/bind.png"
 av.ImageColor3=n.Dark(p.Text,0.43)
 av.Parent=au
 local aw=Instance.new"TextLabel"
@@ -5235,7 +5235,7 @@ ax.Name="Cover"
 ax.Size=UDim2.fromOffset(154,40)
 ax.BackgroundTransparency=1
 ax.Visible=false
-ax.Image=v"vape/assets/new/bindbkg.png"
+ax.Image=v"atomware/assets/new/bindbkg.png"
 ax.ScaleType=Enum.ScaleType.Slice
 ax.SliceCenter=Rect.new(0,0,141,40)
 ax.Parent=ar
@@ -5253,7 +5253,7 @@ au.Parent=ar
 local az=au:Clone()
 az.Parent=ar
 az.Name="Star"
-az.Icon.Image=v"vape/assets/new/star.png"
+az.Icon.Image=v"atomware/assets/new/star.png"
 az.BackgroundColor3=Color3.fromRGB(255,255,255)
 az.Visible=false
 az.BackgroundTransparency=0
@@ -5388,7 +5388,7 @@ aD.Name="Dots"
 aD.Size=UDim2.fromOffset(3,16)
 aD.Position=UDim2.fromOffset(4,12)
 aD.BackgroundTransparency=1
-aD.Image=v"vape/assets/new/dots.png"
+aD.Image=v"atomware/assets/new/dots.png"
 aD.ImageColor3=n.Light(p.Main,0.37)
 aD.Parent=aC
 at.Name=an.Name.."Children"
@@ -5555,7 +5555,7 @@ end
 au.MouseEnter:Connect(function()
 aw.Visible=false
 av.Visible=not aw.Visible
-av.Image=v"vape/assets/new/edit.png"
+av.Image=v"atomware/assets/new/edit.png"
 if not ao.Enabled then
 av.ImageColor3=n.Dark(p.Text,0.16)
 end
@@ -5563,7 +5563,7 @@ end)
 au.MouseLeave:Connect(function()
 aw.Visible=#ao.Bind>0
 av.Visible=not aw.Visible
-av.Image=v"vape/assets/new/bind.png"
+av.Image=v"atomware/assets/new/bind.png"
 if not ao.Enabled then
 av.ImageColor3=n.Dark(p.Text,0.43)
 end
@@ -6162,7 +6162,7 @@ aw.Name="Arrow"
 aw.Size=UDim2.fromOffset(12,7)
 aw.Position=UDim2.fromOffset(17,19)
 aw.BackgroundTransparency=1
-aw.Image=v"vape/assets/new/expandup.png"
+aw.Image=v"atomware/assets/new/expandup.png"
 aw.ImageColor3=p.Text
 
 aw.Rotation=ao.UpExpand and 0 or 180
@@ -6699,7 +6699,7 @@ ai=table.concat(aj," ")
 end
 shared.REVERT_TRANSLATION_META[ai]=ag
 ae[ag]=ai
-if ag==ai and not table.find(ad,ag)and shared.VoidDev then
+if ag==ai and not table.find(ad,ag)and shared.AtomDev then
 table.insert(ad,ag)
 writefile("FAILED_TRANSLATION.json",encode(ad))
 end
@@ -6833,7 +6833,7 @@ am.Size=UDim2.fromOffset(16,16)
 am.Position=UDim2.new(1,-47,0,12)
 am.BackgroundTransparency=1
 am.AutoButtonColor=false
-am.Image=v"vape/assets/new/pin.png"
+am.Image=v"atomware/assets/new/pin.png"
 am.ImageColor3=n.Dark(p.Text,0.43)
 am.Parent=ah
 am.Visible=not ag.Pinned
@@ -6851,7 +6851,7 @@ ao.Name="Dots"
 ao.Size=UDim2.fromOffset(3,16)
 ao.Position=UDim2.fromOffset(4,12)
 ao.BackgroundTransparency=1
-ao.Image=v"vape/assets/new/dots.png"
+ao.Image=v"atomware/assets/new/dots.png"
 ao.ImageColor3=n.Light(p.Main,0.37)
 ao.Parent=an
 
@@ -7060,7 +7060,7 @@ local aB=false
 local aC="STAGING"
 
 local function checkWhitelistForRating()
-if aC~="PRODUCTION"and not shared.VoidDev then
+if aC~="PRODUCTION"and not shared.AtomDev then
 az=true
 aB=false
 end
@@ -8461,7 +8461,7 @@ flickerTextEffect(U,true,"")
 return
 end
 
-local a5="vape/profiles/"..T..d.Place..".txt"
+local a5="atomware/profiles/"..T..d.Place..".txt"
 if not E(a5)then
 d:CreateNotification("Vape","Failed to read config file. Please choose different profile :c",6,"warning")
 return
@@ -8612,7 +8612,7 @@ a5.Name="Icon"
 a5.Size=UDim2.fromOffset(16,16)
 a5.Position=UDim2.fromOffset(16,14)
 a5.BackgroundTransparency=1
-a5.Image=v"vape/assets/new/profilesicon.png"
+a5.Image=v"atomware/assets/new/profilesicon.png"
 a5.ImageColor3=p.Text
 a5.Parent=aD
 
@@ -8686,7 +8686,7 @@ bd.Parent=a9
 end
 
 
-if getgenv().admin_config_api_key~=nil and shared.VoidDev then
+if getgenv().admin_config_api_key~=nil and shared.AtomDev then
 local a9=Instance.new"Frame"
 a9.Name="AdminBadge"
 a9.Parent=a7
@@ -8747,7 +8747,7 @@ ba.Size=UDim2.fromOffset(24,24)
 ba.Position=UDim2.new(1,-40,0,12)
 ba.BackgroundColor3=Color3.fromRGB(60,60,60)
 ba.AutoButtonColor=false
-ba.Image=v"vape/assets/new/close.png"
+ba.Image=v"atomware/assets/new/close.png"
 ba.ImageColor3=Color3.fromRGB(200,200,200)
 ba.Parent=aD
 addCorner(ba)
@@ -8810,7 +8810,7 @@ be.BackgroundTransparency=1
 be.BorderSizePixel=0
 be.Position=UDim2.new(0,14,0.5,-8)
 be.Size=UDim2.fromOffset(16,16)
-be.Image=v"vape/assets/new/search.png"
+be.Image=v"atomware/assets/new/search.png"
 be.ImageColor3=Color3.fromRGB(150,150,150)
 
 local bf=Instance.new"TextBox"
@@ -8882,7 +8882,7 @@ local bl,bm=G(function()
 return l:JSONDecode(d.http_function"https://configs.atomware.xyz")
 end,3)
 if not bl then
-errorNotification("Voidware | Configs","Couldn't load the configs data :c Try again later",5)
+errorNotification("AtomWare | Configs","Couldn't load the configs data :c Try again later",5)
 ap("Couldn't load configs :c",true)
 return
 end
@@ -8960,7 +8960,7 @@ local bq=false
 
 if getgenv().username and bn and bn:lower()==tostring(getgenv().username):lower()then
 bq=true
-elseif getgenv().admin_config_api_key~=nil and shared.VoidDev then
+elseif getgenv().admin_config_api_key~=nil and shared.AtomDev then
 bq=true
 bp=true
 end
@@ -9187,7 +9187,7 @@ ConfirmText="UPDATE",
 CancelText="CANCEL",
 OnConfirm=function()
 
-local bG="vape/profiles/"..bF..d.Place..".txt"
+local bG="atomware/profiles/"..bF..d.Place..".txt"
 if not E(bG)then
 d:CreateNotification(
 "Vape",
@@ -9410,7 +9410,7 @@ if bC then
 local bD=string.format("%s (%s)",bC.name,bC.username)
 local bE,bF=bC.link:match"^(.-/)([^/]+)$"
 if not bE or not bF then
-errorNotification("Voidware | Configs",`Invalid URL for {tostring(bm)}. Please report this to a developer in discord.gg/voidware`,10)
+errorNotification("AtomWare | Configs",`Invalid URL for {tostring(bm)}. Please report this to a developer in discord.gg/atomware`,10)
 warn("Invalid URL:",bC.link)
 return
 end local
@@ -9418,7 +9418,7 @@ bG, bH=pcall(function()
 return bE..l:UrlEncode(bF)
 end)
 if not bH then
-errorNotification("Voidware | Configs",`Couldn't resolve the url for {tostring(bm)}. Please report this to a developer in discord.gg/voidware`,10)
+errorNotification("AtomWare | Configs",`Couldn't resolve the url for {tostring(bm)}. Please report this to a developer in discord.gg/atomware`,10)
 warn(`Invalid URL resolve: {tostring(bH)}`)
 return
 end
@@ -9460,7 +9460,7 @@ if bC.description~=nil then
 shared[`FORCE_PROFILE_TEXT_GUI_CUSTOM_TEXT_{tostring(bD)}`]=tostring(bC.description)
 end
 d:Save(bD)
-writefile("vape/profiles/"..bD..d.Place..".txt",bI)
+writefile("atomware/profiles/"..bD..d.Place..".txt",bI)
 d:Load(true,bD)
 local bL=bJ and"Reinstalled"or"Downloaded"
 d:CreateNotification("Vape",`{bL} "{bm}" by @{bC.username}`,5,"info")
@@ -9729,7 +9729,7 @@ ao.Name="Arrow"
 ao.Size=UDim2.fromOffset(9,4)
 ao.Position=UDim2.fromOffset(20,19)
 ao.BackgroundTransparency=1
-ao.Image=v"vape/assets/new/expandup.png"
+ao.Image=v"atomware/assets/new/expandup.png"
 ao.ImageColor3=Color3.fromRGB(140,140,140)
 ao.Rotation=180
 ao.Parent=an
@@ -9755,7 +9755,7 @@ ar.Size=UDim2.fromOffset(16,16)
 ar.Position=UDim2.new(1,-52,0,13)
 ar.BackgroundTransparency=1
 ar.AutoButtonColor=false
-ar.Image=ah.Name~="Profiles"and v"vape/assets/new/customsettings.png"or v"vape/assets/new/worldicon.png"
+ar.Image=ah.Name~="Profiles"and v"atomware/assets/new/customsettings.png"or v"atomware/assets/new/worldicon.png"
 ar.ImageColor3=n.Dark(p.Text,0.43)
 ar.Parent=aj
 if ah.Profiles then
@@ -9842,17 +9842,17 @@ CancelColor=Color3.fromRGB(40,120,40),
 CancelHoverColor=Color3.fromRGB(60,170,60),
 OnConfirm=function()
 d.Save=function()end
-if E("vape/profiles/"..d.Profile..d.Place..".txt")and delfile then
-delfile("vape/profiles/"..d.Profile..d.Place..".txt")
+if E("atomware/profiles/"..d.Profile..d.Place..".txt")and delfile then
+delfile("atomware/profiles/"..d.Profile..d.Place..".txt")
 end
 shared.vapereload=true
 if shared.VapeDeveloper then
-loadstring(readfile"vape/loader.lua","loader")()
+loadstring(readfile"atomware/loader.lua","loader")()
 else
 loadstring(
 d.http_function(
 'https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/'
-..readfile"vape/profiles/commit.txt"
+..readfile"atomware/profiles/commit.txt"
 .."/loader.lua",
 true
 )
@@ -9895,7 +9895,7 @@ aA.Name="AddButton"
 aA.Size=UDim2.fromOffset(16,16)
 aA.Position=UDim2.new(1,-26,0,8)
 aA.BackgroundTransparency=1
-aA.Image=v"vape/assets/new/add.png"
+aA.Image=v"atomware/assets/new/add.png"
 aA.ImageColor3=ah.Color
 aA.ImageTransparency=0.3
 aA.Parent=ax
@@ -9909,7 +9909,7 @@ local function profilesButtonRefresh()
 if not ah.Profiles then return end
 local aC=ag.Profile
 if not aC then
-if shared.VoidDev then
+if shared.AtomDev then
 warn"profilesButtonRefresh: local profile not found!"
 end
 return
@@ -9925,8 +9925,8 @@ local aE=aC:GetValue(aD)
 if aE then
 if aD~="default"then
 table.remove(d.Profiles,aE)
-if E("vape/profiles/"..aD..d.Place..".txt")and delfile then
-delfile("vape/profiles/"..aD..d.Place..".txt")
+if E("atomware/profiles/"..aD..d.Place..".txt")and delfile then
+delfile("atomware/profiles/"..aD..d.Place..".txt")
 end
 end
 else
@@ -9998,7 +9998,7 @@ aK.Name="Dots"
 aK.Size=UDim2.fromOffset(3,16)
 aK.Position=UDim2.fromOffset(10,9)
 aK.BackgroundTransparency=1
-aK.Image=v"vape/assets/new/dots.png"
+aK.Image=v"atomware/assets/new/dots.png"
 aK.ImageColor3=n.Light(p.Main,0.37)
 aK.Parent=aJ
 local aL=Instance.new"TextButton"
@@ -10019,7 +10019,7 @@ aM.Name="Icon"
 aM.Size=UDim2.fromOffset(12,12)
 aM.Position=UDim2.new(0.5,-6,0,5)
 aM.BackgroundTransparency=1
-aM.Image=v"vape/assets/new/bind.png"
+aM.Image=v"atomware/assets/new/bind.png"
 aM.ImageColor3=n.Dark(p.Text,0.43)
 aM.Parent=aL
 local aN=Instance.new"TextLabel"
@@ -10035,7 +10035,7 @@ aN.Parent=aL
 aL.MouseEnter:Connect(function()
 aN.Visible=false
 aM.Visible=not aN.Visible
-aM.Image=v"vape/assets/new/edit.png"
+aM.Image=v"atomware/assets/new/edit.png"
 if aF.Name~=d.Profile then
 aM.ImageColor3=n.Dark(p.Text,0.16)
 end
@@ -10043,7 +10043,7 @@ end)
 aL.MouseLeave:Connect(function()
 aN.Visible=#aF.Bind>0
 aM.Visible=not aN.Visible
-aM.Image=v"vape/assets/new/bind.png"
+aM.Image=v"atomware/assets/new/bind.png"
 if aF.Name~=d.Profile then
 aM.ImageColor3=n.Dark(p.Text,0.43)
 end
@@ -10053,7 +10053,7 @@ aO.Name="Cover"
 aO.Size=UDim2.fromOffset(154,33)
 aO.BackgroundTransparency=1
 aO.Visible=false
-aO.Image=v"vape/assets/new/bindbkg.png"
+aO.Image=v"atomware/assets/new/bindbkg.png"
 aO.ScaleType=Enum.ScaleType.Slice
 aO.SliceCenter=Rect.new(0,0,141,40)
 aO.Parent=aG
@@ -10083,7 +10083,7 @@ ai:ChangeValue(aF.Name)
 end
 end)
 aG.Activated:Connect(function()
-d:Save(aF.Name,not E("vape/profiles/"..aF.Name..d.Place..".txt"))
+d:Save(aF.Name,not E("atomware/profiles/"..aF.Name..d.Place..".txt"))
 d:Load(true,aF.Name)
 end)
 aG.MouseEnter:Connect(function()
@@ -10192,7 +10192,7 @@ aM.Position=UDim2.new(1,-23,0,8)
 aM.BackgroundColor3=Color3.new(1,1,1)
 aM.BackgroundTransparency=1
 aM.AutoButtonColor=false
-aM.Image=v"vape/assets/new/closemini.png"
+aM.Image=v"atomware/assets/new/closemini.png"
 aM.ImageColor3=n.Light(p.Text,0.2)
 aM.ImageTransparency=0.5
 aM.Parent=aH
@@ -10423,7 +10423,7 @@ aj.Name="Icon"
 aj.Size=UDim2.fromOffset(14,14)
 aj.Position=UDim2.new(1,-23,0,11)
 aj.BackgroundTransparency=1
-aj.Image=v"vape/assets/new/search.png"
+aj.Image=v"atomware/assets/new/search.png"
 aj.ImageColor3=n.Light(p.Main,0.37)
 aj.Parent=ah
 local ak=Instance.new"ImageButton"
@@ -10431,7 +10431,7 @@ ak.Name="Legit"
 ak.Size=UDim2.fromOffset(29,16)
 ak.Position=UDim2.fromOffset(8,11)
 ak.BackgroundTransparency=1
-ak.Image=v"vape/assets/new/legit.png"
+ak.Image=v"atomware/assets/new/legit.png"
 ak.Parent=ah
 local al=Instance.new"Frame"
 al.Name="LegitDivider"
@@ -11069,7 +11069,7 @@ al.Name="Icon"
 al.Size=UDim2.fromOffset(16,16)
 al.Position=UDim2.fromOffset(18,13)
 al.BackgroundTransparency=1
-al.Image=v"vape/assets/new/legittab.png"
+al.Image=v"atomware/assets/new/legittab.png"
 al.ImageColor3=p.Text
 al.Parent=aj
 
@@ -11169,7 +11169,7 @@ aA.Name="Dots"
 aA.Size=UDim2.fromOffset(2,12)
 aA.Position=UDim2.fromOffset(6,6)
 aA.BackgroundTransparency=1
-aA.Image=v"vape/assets/new/dots.png"
+aA.Image=v"atomware/assets/new/dots.png"
 aA.ImageColor3=n.Light(p.Main,0.37)
 aA.Parent=az
 
@@ -11210,7 +11210,7 @@ aE.Name="Back"
 aE.Size=UDim2.fromOffset(16,16)
 aE.Position=UDim2.fromOffset(11,13)
 aE.BackgroundTransparency=1
-aE.Image=v"vape/assets/new/back.png"
+aE.Image=v"atomware/assets/new/back.png"
 aE.ImageColor3=n.Light(p.Main,0.37)
 aE.Parent=aC
 addCorner(aC)
@@ -11578,7 +11578,7 @@ an.Size=UDim2.fromOffset(math.max(F(removeTags(ai),14,p.Font).X+80,266),75)
 an.Position=UDim2.new(1,0,1,-(29+(78*am)))
 an.ZIndex=5
 an.BackgroundTransparency=1
-an.Image=v"vape/assets/new/notification.png"
+an.Image=v"atomware/assets/new/notification.png"
 an.ScaleType=Enum.ScaleType.Slice
 an.SliceCenter=Rect.new(7,7,9,9)
 an.Parent=r
@@ -11589,7 +11589,7 @@ ao.Size=UDim2.fromOffset(60,60)
 ao.Position=UDim2.fromOffset(-5,-8)
 ao.ZIndex=5
 ao.BackgroundTransparency=1
-ao.Image=v("vape/assets/new/"..(al or"info")..".png")
+ao.Image=v("atomware/assets/new/"..(al or"info")..".png")
 ao.ImageColor3=Color3.new()
 ao.ImageTransparency=0.5
 ao.Parent=an
@@ -11702,7 +11702,7 @@ aw.AnchorPoint=Vector2.new(0.5,0.5)
 aw.Position=UDim2.fromScale(0.5,0.45)
 aw.BackgroundTransparency=1
 aw.ZIndex=20
-aw.Image=v"vape/assets/new/notification.png"
+aw.Image=v"atomware/assets/new/notification.png"
 aw.ScaleType=Enum.ScaleType.Slice
 aw.SliceCenter=Rect.new(7,7,9,9)
 aw.Parent=t
@@ -11893,9 +11893,9 @@ end
 local ak={}
 local al=true
 
-local am="vape/profiles/"..str(game.GameId).."_"..str(ah.Place)..".gui.txt"
+local am="atomware/profiles/"..str(game.GameId).."_"..str(ah.Place)..".gui.txt"
 if not E(am)then
-am="vape/profiles/"..str(game.GameId)..".gui.txt"
+am="atomware/profiles/"..str(game.GameId)..".gui.txt"
 end
 if E(am)then
 ak=loadJson(am)
@@ -11966,13 +11966,13 @@ F(ah.ProfileLabel.Text,ah.ProfileLabel.TextSize,ah.ProfileLabel.Font).X+16,
 )
 end
 
-local an=E("vape/profiles/"..ah.Profile..ah.Place..".txt")
+local an=E("atomware/profiles/"..ah.Profile..ah.Place..".txt")
 
 if an then
 pcall(function()
 d.ProfilesRefresh:Fire()
 end)
-local ao=loadJson("vape/profiles/"..ah.Profile..ah.Place..".txt")
+local ao=loadJson("atomware/profiles/"..ah.Profile..ah.Place..".txt")
 if not ao then
 ao={Categories={},Modules={},Legit={}}
 ah:CreateNotification("Vape","Failed to load "..ah.Profile.." profile.",10,"alert")
@@ -12075,7 +12075,7 @@ else
 ah:Save(ah.Profile,true)
 end
 
-if shared.ForceVoidwareTutorial or(not an and tostring(ah.Profile)=="default")then
+if shared.ForceAtomWareTutorial or(not an and tostring(ah.Profile)=="default")then
 ah.NewUser=true
 else
 ah.NewUser=false
@@ -12087,7 +12087,7 @@ y.Visible=false
 w.Visible=true
 ah.TutorialAPI:setText"Tutorial Complete!"
 task.wait(1)
-ah.TutorialAPI:setText"Thanks for using Voidware <3"
+ah.TutorialAPI:setText"Thanks for using AtomWare <3"
 task.wait(1.5)
 ah.TutorialAPI:revertTutorialMode(true)
 end)
@@ -12112,7 +12112,7 @@ local ap=Instance.new"ImageLabel"
 ap.Size=UDim2.fromOffset(26,26)
 ap.Position=UDim2.fromOffset(3,3)
 ap.BackgroundTransparency=1
-ap.Image=v"vape/assets/new/vape.png"
+ap.Image=v"atomware/assets/new/vape.png"
 ap.Parent=ao
 local aq=Instance.new"UICorner"
 aq.Parent=ao
@@ -12297,12 +12297,12 @@ Options=d:SaveOptions(an,an.Options),
 end
 end
 
-writefile("vape/profiles/"..str(game.GameId).."_"..str(ah.Place)..".gui.txt",l:JSONEncode(ak))
-writefile("vape/profiles/"..ah.Profile..ah.Place..".txt",l:JSONEncode(al))
+writefile("atomware/profiles/"..str(game.GameId).."_"..str(ah.Place)..".gui.txt",l:JSONEncode(ak))
+writefile("atomware/profiles/"..ah.Profile..ah.Place..".txt",l:JSONEncode(al))
 end
 
 function d.DisableSaving(ah)
-d:CreateNotification("Vape","Saving is disabled due to an error in Voidware!",30,"warning")
+d:CreateNotification("Vape","Saving is disabled due to an error in AtomWare!",30,"warning")
 ah.Loaded=false
 ah.Save=function()end
 end
@@ -12422,7 +12422,7 @@ local ah=Instance.new"TextLabel"
 ah.Size=UDim2.fromScale(1,0.02)
 ah.Position=UDim2.fromScale(0,0.97)
 ah.BackgroundTransparency=1
-ah.Text="discord.gg/voidware"
+ah.Text="discord.gg/atomware"
 ah.TextScaled=true
 ah.TextColor3=Color3.new(1,1,1)
 ah.TextStrokeTransparency=0.5
@@ -12457,7 +12457,7 @@ o:Tween(ai.label,TweenInfo.new(1.5),{
 TextSize=30,
 Position=UDim2.fromScale(0.5,0.6)
 })
-ai:setText"Welcome to Voidware!"
+ai:setText"Welcome to AtomWare!"
 ai.label.Parent=x
 end,
 tweenToSecondPosition=function(ai)
@@ -12480,7 +12480,7 @@ ai:setText(ai.defaultText)
 ai.label.Parent=w
 end)
 if aj then
-d:CreateNotification("Tutorial Complete!","Thank you for using Voidware <3",10)
+d:CreateNotification("Tutorial Complete!","Thank you for using AtomWare <3",10)
 end
 end,
 setText=function(ai,aj)
@@ -12606,12 +12606,12 @@ Tooltip="Allows multiple keys to be bound to a module (eg. G + H)",
 d.QueueTeleportEnabledToggle=am:CreateToggle{
 Name="Queue On Teleport",
 Default=true,
-Tooltip="Makes Voidware auto execute every time you teleport",
+Tooltip="Makes AtomWare auto execute every time you teleport",
 Function=function(an)
 shared.DISABLED_QUEUE_ON_TELEPORT=not an
 if not d.Notifications then return end
 d:CreateNotification(
-"Voidware",
+"AtomWare",
 "Auto Execute"
 .."<font color='#FFFFFF'> was </font>"
 ..(an and"<font color='#5AFF5A'>Enabled</font>"or"<font color='#FF5A5A'>Disabled</font>")
@@ -12677,17 +12677,17 @@ am:CreateButton{
 Name="Reset current profile",
 Function=function()
 d.Save=function()end
-if E("vape/profiles/"..d.Profile..d.Place..".txt")and delfile then
-delfile("vape/profiles/"..d.Profile..d.Place..".txt")
+if E("atomware/profiles/"..d.Profile..d.Place..".txt")and delfile then
+delfile("atomware/profiles/"..d.Profile..d.Place..".txt")
 end
 shared.vapereload=true
 if shared.VapeDeveloper then
-loadstring(readfile"vape/loader.lua","loader")()
+loadstring(readfile"atomware/loader.lua","loader")()
 else
 loadstring(
 d.http_function(
 'https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/'
-..readfile"vape/profiles/commit.txt"
+..readfile"atomware/profiles/commit.txt"
 .."/loader.lua",
 true
 )
@@ -12708,14 +12708,14 @@ Name="Reinject",
 Function=function()
 shared.vapereload=true
 if shared.VapeDeveloper then
-loadstring(readfile"vape/loader.lua","loader")()
+loadstring(readfile"atomware/loader.lua","loader")()
 else
 loadstring(
 d.http_function(
 "https://raw.githubusercontent.com/"
 .."endmylifehahahahahahahahaha"
 .."/AtomWare/"
-..readfile"vape/profiles/commit.txt"
+..readfile"atomware/profiles/commit.txt"
 .."/loader.lua",
 true
 )
@@ -12727,44 +12727,44 @@ Tooltip="Reloads vape for debugging purposes",
 
 d:CreateCategory{
 Name="Combat",
-Icon=v"vape/assets/new/combaticon.png",
+Icon=v"atomware/assets/new/combaticon.png",
 Size=UDim2.fromOffset(13,14),
 Visible=true,
 }
 d:CreateCategory{
 Name="Blatant",
-Icon=v"vape/assets/new/blatanticon.png",
+Icon=v"atomware/assets/new/blatanticon.png",
 Size=UDim2.fromOffset(14,14),
 Visible=true,
 }
 d:CreateCategory{
 Name="Render",
-Icon=v"vape/assets/new/rendericon.png",
+Icon=v"atomware/assets/new/rendericon.png",
 Size=UDim2.fromOffset(15,14),
 Visible=true,
 }
 d:CreateCategory{
 Name="Utility",
-Icon=v"vape/assets/new/utilityicon.png",
+Icon=v"atomware/assets/new/utilityicon.png",
 Size=UDim2.fromOffset(15,14),
 Visible=true,
 }
 d:CreateCategory{
 Name="World",
-Icon=v"vape/assets/new/worldicon.png",
+Icon=v"atomware/assets/new/worldicon.png",
 Size=UDim2.fromOffset(14,14),
 Visible=true,
 }
 for an,ao in{
 {
 Name="Inventory",
-Icon=v"vape/assets/new/inventoryicon.png",
+Icon=v"atomware/assets/new/inventoryicon.png",
 Size=UDim2.fromOffset(15,14),
 GuiColorSync=true,
 },
 {
 Name="Minigames",
-Icon=v"vape/assets/new/miniicon.png",
+Icon=v"atomware/assets/new/miniicon.png",
 Size=UDim2.fromOffset(19,12),
 GuiColorSync=true,
 }
@@ -12773,7 +12773,7 @@ d.Categories[ao.Name]=d.Categories.World:CreateModuleCategory(ao)
 end
 d:CreateCategory{
 Name="Legit",
-Icon=v"vape/assets/new/legittab.png",
+Icon=v"atomware/assets/new/legittab.png",
 Size=UDim2.fromOffset(14,14),
 Visible=true
 }
@@ -12793,7 +12793,7 @@ Value=1,
 }
 local ap={
 Name="Friends",
-Icon=v"vape/assets/new/friendstab.png",
+Icon=v"atomware/assets/new/friendstab.png",
 Size=UDim2.fromOffset(17,16),
 Placeholder="Roblox username",
 Color=Color3.fromRGB(5,134,105),
@@ -12846,7 +12846,7 @@ d:Clean(an.ColorUpdate)
 
 d:CreateCategoryList{
 Name="Profiles",
-Icon=v"vape/assets/new/profilesicon.png",
+Icon=v"atomware/assets/new/profilesicon.png",
 Size=UDim2.fromOffset(17,10),
 Position=UDim2.fromOffset(12,16),
 Placeholder="Type name",
@@ -12862,7 +12862,7 @@ w.Visible=false
 end
 task.wait(0.1)
 aq:CreatePrompt{
-Title="Welcome to Voidware",
+Title="Welcome to AtomWare",
 Text="Would you like to pick out a pre made config?",
 ConfirmText="Yeah",
 CancelText="No, Thank you",
@@ -12914,7 +12914,7 @@ end)
 local aq
 aq=d:CreateCategoryList{
 Name="Targets",
-Icon=v"vape/assets/new/friendstab.png",
+Icon=v"atomware/assets/new/friendstab.png",
 Size=UDim2.fromOffset(17,16),
 Placeholder="Roblox username",
 Function=function()
@@ -12929,7 +12929,7 @@ d:CreateSearch()
 d.Categories.Main:CreateDivider"overlays"
 local ar=d.Categories.World:CreateModuleCategory{
 Name="Overlays",
-Icon=v"vape/assets/new/overlaysicon.png",
+Icon=v"atomware/assets/new/overlaysicon.png",
 Size=UDim2.fromOffset(24,18),
 GuiColorSync=true,
 UpExpand=true,
@@ -13232,7 +13232,7 @@ d.Categories.Main:CreateBind()
 
 local aw=d:CreateOverlay{
 Name="Text GUI",
-Icon=v"vape/assets/new/textguiicon.png",
+Icon=v"atomware/assets/new/textguiicon.png",
 Size=UDim2.fromOffset(16,12),
 Position=UDim2.fromOffset(12,14),
 Function=function()
@@ -13379,8 +13379,8 @@ end,
 aK=aw:CreateTextList{
 Name="Blacklist",
 Tooltip="Name of module to hide.",
-Icon=v"vape/assets/new/blockedicon.png",
-Tab=v"vape/assets/new/blockedtab.png",
+Icon=v"atomware/assets/new/blockedicon.png",
+Tab=v"atomware/assets/new/blockedtab.png",
 TabSize=UDim2.fromOffset(21,16),
 Color=Color3.fromRGB(250,50,56),
 Function=function()
@@ -13461,7 +13461,7 @@ aT.BackgroundTransparency=1
 aT.BorderSizePixel=0
 aT.Visible=false
 aT.BackgroundColor3=Color3.new()
-aT.Image=v"vape/assets/new/textvape.png"
+aT.Image=v"atomware/assets/new/textvape.png"
 aT.Parent=aw.Children
 
 local aU=aw.Children.AbsolutePosition.X>(C.AbsoluteSize.X/2)
@@ -13483,7 +13483,7 @@ aV.Position=UDim2.new(1,1,0,1)
 aV.BackgroundColor3=Color3.new()
 aV.BackgroundTransparency=1
 aV.BorderSizePixel=0
-aV.Image=v"vape/assets/new/textv4.png"
+aV.Image=v"atomware/assets/new/textv4.png"
 aV.Parent=aT
 local aW=aT:Clone()
 aW.Position=UDim2.fromOffset(1,1)
@@ -13553,7 +13553,7 @@ local a3
 local a4
 a3=d:CreateOverlay{
 Name="Target Info",
-Icon=v"vape/assets/new/targetinfoicon.png",
+Icon=v"atomware/assets/new/targetinfoicon.png",
 Size=UDim2.fromOffset(14,14),
 Position=UDim2.fromOffset(12,14),
 CategorySize=240,

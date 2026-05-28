@@ -147,7 +147,7 @@ type ESP = {
 }
 
 --// Library \\--
-local repo = "https://raw.githubusercontent.com/mstudio45/LinoriaLib/main/"
+local repo = "https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/master/LinoriaLib/"
 
 local Library = loadstring(game:HttpGet(repo .. "Library.lua"))()
 local ThemeManager = loadstring(game:HttpGet(repo .. "addons/ThemeManager.lua"))()
@@ -2501,7 +2501,7 @@ MenuGroup:AddToggle("ShowCustomCursor", {Text = "Custom Cursor", Default = true,
 MenuGroup:AddDivider()
 MenuGroup:AddLabel("Menu bind"):AddKeyPicker("MenuKeybind", { Default = "RightShift", NoUI = true, Text = "Menu keybind" })
 MenuGroup:AddButton("Join Discord Server", function()
-    local Inviter = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Discord%20Inviter/Source.lua"))()
+    local Inviter = loadstring(game:HttpGet("https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/master/Utilities/Discord Inviter/Source.lua"))()
 	Inviter.Join("https://discord.com/invite/cfyMptntHr")
 	Inviter.Prompt({
 		name = "mspaint",

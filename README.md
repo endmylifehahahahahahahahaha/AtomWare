@@ -11,12 +11,12 @@
   Rise up to the top while remaining completely untouchable.
 </h2>
 
-> Voidware is a continuation of the original Vape project by [7GrandDad](https://github.com/7GrandDadPGN), maintained by [@Erchobg](https://github.com/Erchobg) and contributors.
+> AtomWare is a continuation of the original Vape project by [7GrandDad](https://github.com/7GrandDadPGN), maintained by [@Erchobg](https://github.com/Erchobg) and contributors.
 
 ## Contacts
-[Discord](https://discord.gg/voidware)
+[Discord](https://discord.gg/atomware)
 <br/>
-[VapeVoidware YouTube](https://www.youtube.com/@VapeVoidware)
+[VapeAtomWare YouTube](https://www.youtube.com/@VapeAtomWare)
 [7GrandDadPGN YouTube](https://www.youtube.com/@7GrandDadVape)
 
 ## Usage
@@ -35,12 +35,12 @@ Half of the time its usually the scripting utility at fault, please make sure th
 
 ### User Issues
 If its not the supposed utility at fault, please try some troubleshooting steps.
-1. Deleting the newvape folder (WITH THE GAME CLOSED).
+1. Deleting the atomware folder (WITH THE GAME CLOSED).
 2. Making sure you have connection to [the main loadstring.](https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/refs/heads/main/NewMainScript.lua)
 3. Ensuring no external script is conflicting with vape.
 
 ## Developers & Credits
-[@Erchobg](https://github.com/Erchobg) - Lead maintainer of Voidware
+[@Erchobg](https://github.com/Erchobg) - Lead maintainer of AtomWare
 <br/>
 [7GrandDad](https://github.com/7GrandDadPGN) - Original Vape project creator
 <br/>

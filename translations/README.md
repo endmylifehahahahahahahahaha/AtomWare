@@ -1,6 +1,6 @@
 # Translations
 
-This repository contains the translation mappings for **Voidware Client**.
+This repository contains the translation mappings for **AtomWare Client**.
 Each file in [`/locales/`](./locales) contains the text strings for a specific language.
 
 * [`Languages.json`](./Languages.json) lists all available languages and their metadata.
@@ -21,7 +21,7 @@ Until then, you can edit JSON files directly on GitHub.
 
 # Testing in Game
 
-You can test your translation locally by placing the `.json` file in your executor’s workspace folder and running this **before** loading Voidware Client:
+You can test your translation locally by placing the `.json` file in your executor’s workspace folder and running this **before** loading AtomWare Client:
 
 ```lua
 shared.environment = "translator_env"

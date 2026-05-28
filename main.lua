@@ -42,9 +42,9 @@ local function downloadFile(path, func)
 				"https://raw.githubusercontent.com/"
 					.. "endmylifehahahahahahahahaha"
 					.. "/AtomWare/"
-					.. readfile("vape/profiles/commit.txt")
+					.. readfile("atomware/profiles/commit.txt")
 					.. "/"
-					.. select(1, path:gsub("vape/", "")),
+					.. select(1, path:gsub("atomware/", "")),
 				true
 			)
 		end)
@@ -61,19 +61,19 @@ local function downloadFile(path, func)
 end
 
 local TELEPORT_META = {
-	"VoidwareBedwarsObfuscationDebug",
+	"AtomWareBedwarsObfuscationDebug",
 	"BedwarsCheatEngineLoadingDebug",
 	"TeleportExploitAutowinEnabled",
-	"VoidwareBedwarsLoadingDebug",
+	"AtomWareBedwarsLoadingDebug",
 	"InternalStatisticsDisabled",
-	"VoidwareNetworkingDebug",
+	"AtomWareNetworkingDebug",
 	"LOADER_BYPASS_SLOWMODE",
-	"VoidwareLoadingDebug",
+	"AtomWareLoadingDebug",
 	"admin_config_api_key",
 	"LOADER_LIB_DISABLED",
 	"BedwarsClientDebug",
 	"VapeCustomProfile",
-	"NoVoidwareModules",
+	"NoAtomWareModules",
 	"ProfilesDisabled",
 	"CheatEngineMode",
 	"ClosetCheatMode",
@@ -84,7 +84,7 @@ local TELEPORT_META = {
 	"TestingMode",
 	"VapePrivate",
 	"RiseMode",
-	"VoidDev",
+	"AtomDev",
 	"username",
 	"password",
 }
@@ -117,16 +117,16 @@ local function finishLoading()
 		if (not teleportedServers) and not shared.VapeIndependent and not shared.DISABLED_QUEUE_ON_TELEPORT and not shared.FORCE_DISABLED_QUEUE_ON_TELEPORT then
 			teleportedServers = true
 			local teleportScript = [[
-				if shared.VoidwareAutoExecutingState then
+				if shared.AtomWareAutoExecutingState then
 					return
 				end
-				shared.VoidwareAutoExecutingState = true
+				shared.AtomWareAutoExecutingState = true
 				shared.vapereload = true
 				task.wait(2.5)
-				if shared.VapeDeveloper and isfile('vape/loader.lua') then
-					loadstring(readfile('vape/loader.lua'), 'loader')()
+				if shared.VapeDeveloper and isfile('atomware/loader.lua') then
+					loadstring(readfile('atomware/loader.lua'), 'loader')()
 				else
-					loadstring(game:HttpGet('https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/'..readfile('vape/profiles/commit.txt')..'/loader.lua', true), 'loader')()
+					loadstring(game:HttpGet('https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/'..readfile('atomware/profiles/commit.txt')..'/loader.lua', true), 'loader')()
 				end
 			]]
 			for _, v in pairs(TELEPORT_META) do
@@ -206,7 +206,7 @@ local function mprint(tbl, indent, visited)
 end
 getgenv().mprint = mprint
 
-local VoidwareLoader
+local AtomWareLoader
 local createCustomSignal = function(key, delay)
 	key = key or "Unknown"
 	delay = delay or 0
@@ -216,7 +216,7 @@ local createCustomSignal = function(key, delay)
 		__delay = delay,
 		__lastFire = nil,
 		Connect = function(self, func, cleanFunc)
-			if VoidwareLoader.Unloaded then
+			if AtomWareLoader.Unloaded then
 				return
 			end
 			assert(func ~= nil and type(func) == "function", "req not met")
@@ -237,7 +237,7 @@ local createCustomSignal = function(key, delay)
 			}
 		end,
 		Once = function(self, func)
-			if VoidwareLoader.Unloaded then
+			if AtomWareLoader.Unloaded then
 				return
 			end
 			assert(func ~= nil and type(func) == "function", "req not met")
@@ -258,7 +258,7 @@ local createCustomSignal = function(key, delay)
 			}
 		end,
 		Fire = function(self, ...)
-			if VoidwareLoader.Unloaded then
+			if AtomWareLoader.Unloaded then
 				return
 			end
 			if not self.__conns then
@@ -270,14 +270,14 @@ local createCustomSignal = function(key, delay)
 			end
 			local delay = self.__delay
 			if not bypass and self.__lastFire ~= nil and tick() - self.__lastFire < delay then
-				if shared.VoidDev and shared.VoidwareNetworkingDebug then
+				if shared.AtomDev and shared.AtomWareNetworkingDebug then
 					warn(`[Events]: Fire dropped for {tostring(key)}!`)
 				end
 				return
 			end
 			self.__lastFire = tick()
 			if #self.__conns < 1 then
-				if shared.VoidDev and shared.VoidwareNetworkingDebug then
+				if shared.AtomDev and shared.AtomWareNetworkingDebug then
 					warn(`[Events]: Fired with no conns for {tostring(key)}!`)
 				end
 			end
@@ -317,7 +317,7 @@ local createCustomSignal = function(key, delay)
 					self.__lastFire = nil
 					self = setmetatable({}, {
 						__index = function()
-							error(`Voidware Event "{tostring(key)}" was destroyed!`)
+							error(`AtomWare Event "{tostring(key)}" was destroyed!`)
 						end,
 					})
 				end
@@ -329,7 +329,7 @@ local createCustomSignal = function(key, delay)
 		end,
 	})
 end
-VoidwareLoader = setmetatable({
+AtomWareLoader = setmetatable({
 	Unloaded = false,
 	Services = setmetatable({}, {
 		__index = function(self, key)
@@ -361,7 +361,7 @@ VoidwareLoader = setmetatable({
 			return self.createCustomSignal(`{id}_{sigName}`)
 		end
 	end,
-	VoidwareEvents = setmetatable({}, {
+	AtomWareEvents = setmetatable({}, {
 		__index = function(self, key)
 			local res = createCustomSignal(key)
 			rawset(self, key, res)
@@ -402,7 +402,7 @@ VoidwareLoader = setmetatable({
 	end,
 	throw = function(self, err)
 		self:report({
-			name = "Voidware Error",
+			name = "AtomWare Error",
 			err = err,
 		})
 	end,
@@ -411,7 +411,7 @@ VoidwareLoader = setmetatable({
 		if not report.notifyBlacklisted and errorNotification ~= nil and type(errorNotification) == "function" then
 			pcall(
 				errorNotification,
-				(report.name or "Voidware") .. " | Error",
+				(report.name or "AtomWare") .. " | Error",
 				((report.err ~= nil and tostring(report.err)) or "Unknown Error"),
 				10
 			)
@@ -425,21 +425,21 @@ VoidwareLoader = setmetatable({
 	end,
 }, {
 	__index = function(self, key)
-		error(`VoidwareLoader: Invalid key {tostring(key)}!`)
+		error(`AtomWareLoader: Invalid key {tostring(key)}!`)
 	end,
 })
-global().VoidwareLoader = VoidwareLoader
+global().AtomWareLoader = AtomWareLoader
 
-if not isfile("vape/profiles/gui.txt") then
-	writefile("vape/profiles/gui.txt", "new")
+if not isfile("atomware/profiles/gui.txt") then
+	writefile("atomware/profiles/gui.txt", "new")
 end
 local gui = "new"
 if shared.RiseVapeMode then
 	gui = "rise"
 end
 
-if not isfolder("vape/assets/" .. gui) then
-	makefolder("vape/assets/" .. gui)
+if not isfolder("atomware/assets/" .. gui) then
+	makefolder("atomware/assets/" .. gui)
 end
 if shared.ACTIVE_LOADER then
 	shared.ACTIVE_LOADER:Update("Loading Gui Library")
@@ -499,7 +499,7 @@ getgenv().notif = function(...)
 	return vape:CreateNotification(...)
 end
 
---pload = VoidwareLoader:wrap(pload)
+--pload = AtomWareLoader:wrap(pload)
 
 local __def_table = setmetatable({}, {
 	__index = function(self)
@@ -530,7 +530,7 @@ if not shared.VapeIndependent then
 	pload(`games/VW{place}`, place, found)
 	loader:Update("Finishing up...", 80)
 	finishLoading()
-	loader:Update("Successfully Loaded Voidware Bedwars :D", 100)
+	loader:Update("Successfully Loaded AtomWare Bedwars :D", 100)
 	task.delay(0.5, function()
 		pcall(function()
 			loader:Destroy()
