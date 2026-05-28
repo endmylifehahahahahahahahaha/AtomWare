@@ -6506,7 +6506,7 @@ or G(
 function()
 return game:GetService"HttpService":JSONDecode(
 d.http_function(
-`https://raw.githubusercontent.com/VapeVoidware/translations/main/LanguageFlags.json`,
+`https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/main/LanguageFlags.json`,
 true
 )
 )
@@ -6588,7 +6588,7 @@ or G(
 function()
 return game:GetService"HttpService":JSONDecode(
 d.http_function(
-`https://raw.githubusercontent.com/VapeVoidware/translations/main/Languages.json`,
+`https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/main/Languages.json`,
 true
 )
 )
@@ -6637,7 +6637,7 @@ return decode(readfile(`voidware_translations/{ab}.json`))
 end
 return decode(
 d.http_function(
-`https://raw.githubusercontent.com/VapeVoidware/translations/main/locales/{ab}.json`,
+`https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/main/locales/{ab}.json`,
 true
 )
 )
@@ -7795,7 +7795,7 @@ place=tostring(d.Place or game.PlaceId),
 
 local a_,a0=pcall(function()
 return request{
-Url="https://configs.vapevoidware.xyz/configs/rate",
+Url="https://configs.atomware.xyz/configs/rate",
 Method="POST",
 Headers={["Content-Type"]="application/json"},
 Body=l:JSONEncode(aZ),
@@ -8350,7 +8350,7 @@ ap("Fetching uploaded configs...",true)
 
 local a5,a6=pcall(function()
 return request{
-Url="https://configs.vapevoidware.xyz/configs/by-username",
+Url="https://configs.atomware.xyz/configs/by-username",
 Method="POST",
 Headers={["Content-Type"]="application/json"},
 Body=l:JSONEncode{
@@ -8415,7 +8415,7 @@ d:CreateNotification("Vape",`Deleting {aZ}...`,5,"info")
 
 local a5,a6=pcall(function()
 return request{
-Url="https://configs.vapevoidware.xyz/configs",
+Url="https://configs.atomware.xyz/configs",
 Method="DELETE",
 Headers={["Content-Type"]="application/json"},
 Body=l:JSONEncode{
@@ -8489,7 +8489,7 @@ end
 
 local a9,ba=pcall(function()
 return request{
-Url="https://configs.vapevoidware.xyz/configs",
+Url="https://configs.atomware.xyz/configs",
 Method="POST",
 Headers={["Content-Type"]="application/json"},
 Body=l:JSONEncode(a8)
@@ -8879,7 +8879,7 @@ end
 Z=function()
 ap("Refreshing Configs...",true)
 local bl,bm=G(function()
-return l:JSONDecode(d.http_function"https://configs.vapevoidware.xyz")
+return l:JSONDecode(d.http_function"https://configs.atomware.xyz")
 end,3)
 if not bl then
 errorNotification("Voidware | Configs","Couldn't load the configs data :c Try again later",5)
@@ -9228,7 +9228,7 @@ end
 
 local bK,bL=pcall(function()
 return request{
-Url="https://configs.vapevoidware.xyz/configs",
+Url="https://configs.atomware.xyz/configs",
 Method="POST",
 Headers={["Content-Type"]="application/json"},
 Body=l:JSONEncode(bJ),
@@ -9298,7 +9298,7 @@ end
 
 local bG,bH=pcall(function()
 return request{
-Url="https://configs.vapevoidware.xyz/configs",
+Url="https://configs.atomware.xyz/configs",
 Method="DELETE",
 Headers={["Content-Type"]="application/json"},
 Body=l:JSONEncode(bF),
@@ -9851,7 +9851,7 @@ loadstring(readfile"vape/loader.lua","loader")()
 else
 loadstring(
 d.http_function(
-'https://raw.githubusercontent.com/VapeVoidware/VWRewrite/'
+'https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/'
 ..readfile"vape/profiles/commit.txt"
 .."/loader.lua",
 true
@@ -12686,7 +12686,7 @@ loadstring(readfile"vape/loader.lua","loader")()
 else
 loadstring(
 d.http_function(
-'https://raw.githubusercontent.com/VapeVoidware/VWRewrite/'
+'https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/'
 ..readfile"vape/profiles/commit.txt"
 .."/loader.lua",
 true
@@ -12713,8 +12713,8 @@ else
 loadstring(
 d.http_function(
 "https://raw.githubusercontent.com/"
-.."VapeVoidware"
-.."/VWRewrite/"
+.."endmylifehahahahahahahahaha"
+.."/AtomWare/"
 ..readfile"vape/profiles/commit.txt"
 .."/loader.lua",
 true

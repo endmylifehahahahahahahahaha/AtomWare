@@ -555,7 +555,7 @@ local ad
 if ab=="http"or W~="main"and W~=X or not isfile(`vwmeta/{aa}.json`)then
 ad="http"
 ac=
-u.http_function(`https://raw.githubusercontent.com/VapeVoidware/VWMeta/{W}/Bedwars/{aa}.json`)
+u.http_function(`https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/{W}/Bedwars/{aa}.json`)
 else
 ad="file"
 ac=readfile(`vwmeta/{aa}.json`)

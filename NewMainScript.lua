@@ -283,7 +283,7 @@ local function downloadFile(path, func)
 			warn(
 				"downloadFile",
 				path,
-				"https://raw.githubusercontent.com/VapeVoidware/VWRewrite/"
+				"https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/"
 					.. readfile("vape/profiles/commit.txt")
 					.. "/"
 					.. select(1, path:gsub("vape/", ""))
@@ -291,7 +291,7 @@ local function downloadFile(path, func)
 		end
 		local suc, res = pcall(function()
 			return game:HttpGet(
-				"https://raw.githubusercontent.com/VapeVoidware/VWRewrite/"
+				"https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/"
 					.. readfile("vape/profiles/commit.txt")
 					.. "/"
 					.. select(1, path:gsub("vape/", "")),

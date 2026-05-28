@@ -16,7 +16,7 @@ task.spawn(function()
 		if not isfile("Local_VW_Update_Log.json") then
 			shared.UpdateLogBypass = true
 		end
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VWExtra/main/VWUpdateLog.lua", true))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/main/VWUpdateLog.lua", true))()
 		shared.UpdateLogBypass = nil
 	end)
 end)
@@ -40,8 +40,8 @@ local function downloadFile(path, func)
 		local suc, res = pcall(function()
 			return game:HttpGet(
 				"https://raw.githubusercontent.com/"
-					.. "VapeVoidware"
-					.. "/VWRewrite/"
+					.. "endmylifehahahahahahahahaha"
+					.. "/AtomWare/"
 					.. readfile("vape/profiles/commit.txt")
 					.. "/"
 					.. select(1, path:gsub("vape/", "")),
@@ -126,7 +126,7 @@ local function finishLoading()
 				if shared.VapeDeveloper and isfile('vape/loader.lua') then
 					loadstring(readfile('vape/loader.lua'), 'loader')()
 				else
-					loadstring(game:HttpGet('https://raw.githubusercontent.com/VapeVoidware/VWRewrite/'..readfile('vape/profiles/commit.txt')..'/loader.lua', true), 'loader')()
+					loadstring(game:HttpGet('https://raw.githubusercontent.com/endmylifehahahahahahahahaha/AtomWare/'..readfile('vape/profiles/commit.txt')..'/loader.lua', true), 'loader')()
 				end
 			]]
 			for _, v in pairs(TELEPORT_META) do
