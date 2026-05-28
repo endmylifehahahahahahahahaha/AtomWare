@@ -144,7 +144,7 @@ R.Name='Blur'
 R.Size=UDim2.new(1,89,1,52)
 R.Position=UDim2.fromOffset(-48,-31)
 R.BackgroundTransparency=1
-R.Image=E'newvape/assets/new/blur.png'
+R.Image=E'atomware/assets/new/blur.png'
 R.ScaleType=Enum.ScaleType.Slice
 R.SliceCenter=Rect.new(52,31,261,502)
 R.Parent=Q
@@ -526,10 +526,10 @@ makefolder"atomware-meta"
 end
 local W=shared.META_COMMIT or"main"
 local X=W
-if isfile"newvape/profiles/metacommit.txt"then
-X=readfile"newvape/profiles/metacommit.txt"
+if isfile"atomware/profiles/metacommit.txt"then
+X=readfile"atomware/profiles/metacommit.txt"
 end
-pcall(writefile,"newvape/profiles/metacommit.txt",W)
+pcall(writefile,"atomware/profiles/metacommit.txt",W)
 local Y=setmetatable({},{
 __index=function(Y)
 return Y
@@ -836,7 +836,7 @@ end
 local function safeRequire(ah,ai)
 local aj,ak=pcall(ai)
 if not aj then
-notif("Vape","Failed to load ["..ah.."]: "..tostring(ak),10,"alert")
+notif("AtomWare","Failed to load ["..ah.."]: "..tostring(ak),10,"alert")
 return nil
 end
 return ak
@@ -1203,7 +1203,7 @@ SummonerClawAttack="SummonerClawAttackRequest",
 },{
 __index=function(ah,ai)
 warn(`CRITICAL! Failure finding remote {tostring(ai)}!`)
-errorNotification("Vape",`Failure finding remote {tostring(ai)}!`,3)
+errorNotification("AtomWare",`Failure finding remote {tostring(ai)}!`,3)
 return ai
 end,
 })
@@ -7683,7 +7683,7 @@ as.Size=UDim2.fromOffset(24,24)
 as.Position=UDim2.new(1,-35,0,9)
 as.BackgroundColor3=Color3.new(1,1,1)
 as.BackgroundTransparency=1
-as.Image=E'newvape/assets/new/close.png'
+as.Image=E'atomware/assets/new/close.png'
 as.ImageColor3=w.Light(y.Text,0.2)
 as.ImageTransparency=0.5
 as.AutoButtonColor=false
@@ -7797,7 +7797,7 @@ local aB=Instance.new'ImageLabel'
 aB.Size=UDim2.fromOffset(14,14)
 aB.Position=UDim2.new(1,-26,0,8)
 aB.BackgroundTransparency=1
-aB.Image=E'newvape/assets/new/search.png'
+aB.Image=E'atomware/assets/new/search.png'
 aB.ImageColor3=w.Light(y.Main,0.37)
 aB.Parent=ay
 local aC=Instance.new'ScrollingFrame'
@@ -7938,7 +7938,7 @@ au.Size=UDim2.fromOffset(12,12)
 au.Position=UDim2.fromScale(0.5,0.5)
 au.AnchorPoint=Vector2.new(0.5,0.5)
 au.BackgroundTransparency=1
-au.Image=E'newvape/assets/new/add.png'
+au.Image=E'atomware/assets/new/add.png'
 au.ImageColor3=Color3.fromHSV(0.46,0.96,0.52)
 au.Parent=as
 local av=Instance.new'Frame'
@@ -8031,7 +8031,7 @@ aC.Size=UDim2.fromOffset(16,16)
 aC.Position=UDim2.new(1,-23,0,6)
 aC.BackgroundColor3=Color3.new(1,1,1)
 aC.BackgroundTransparency=1
-aC.Image=E'newvape/assets/new/closemini.png'
+aC.Image=E'atomware/assets/new/closemini.png'
 aC.ImageColor3=w.Light(y.Text,0.2)
 aC.ImageTransparency=0.5
 aC.AutoButtonColor=false
@@ -8498,7 +8498,7 @@ aC('ImageLabel',{
 Size=UDim2.new(1,89,1,52),
 Position=UDim2.fromOffset(-48,-31),
 BackgroundTransparency=1,
-Image=E'newvape/assets/new/blur.png',
+Image=E'atomware/assets/new/blur.png',
 ScaleType=Enum.ScaleType.Slice,
 SliceCenter=Rect.new(52,31,261,502)
 }),

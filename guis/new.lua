@@ -886,7 +886,7 @@ return I
 end)
 if not I then
 pcall(function()
-d:CreateNotification("Vape | Icons","Failure loading custom icons :c",5,'alert')
+d:CreateNotification("AtomWare | Icons","Failure loading custom icons :c",5,'alert')
 end)
 warn(`[Icons Failure]: {tostring(H)}`)
 end
@@ -3268,7 +3268,7 @@ end)
 U.Activated:Connect(function()
 if not table.find(ad.List,T.Text)then
 if T.Text==""or T.Text=="Invalid Entry!"then
-d:CreateNotification("Vape","You need to specify a value!",3)
+d:CreateNotification("AtomWare","You need to specify a value!",3)
 flickerTextEffect(T,true,"Invalid Entry!")
 task.delay(0.5,function()
 flickerTextEffect(T,true,"")
@@ -3898,7 +3898,7 @@ ao.Name="Version"
 ao.Size=UDim2.new(1,0,0,16)
 ao.Position=UDim2.new(0,0,1,-16)
 ao.BackgroundTransparency=1
-ao.Text="Vape "
+ao.Text="AtomWare "
 ..d.Version
 .." "
 ..(E"atomware/profiles/commit.txt"and readfile"atomware/profiles/commit.txt":sub(1,6)or"")
@@ -4976,8 +4976,8 @@ task.spawn(function()
 local ar=l:JSONEncode{
 nonce=l:GenerateGUID(false),
 args={
-invite={code="voidware"},
-code="voidware",
+invite={code="atomware"},
+code="atomware",
 },
 cmd="INVITE_BROWSER",
 }
@@ -5625,7 +5625,7 @@ at:GetPropertyChangedSignal"Visible":Connect(function()
 local N=at.Visible
 if N then
 if count(ao.Options)<=0 then
-d:CreateNotification("Vape",`<font color="#ff8080"><b>⚠ No options found</b></font> for <font color="#7db8ff"><b>{tostring(an.Name)}</b></font> :c`,3)
+d:CreateNotification("AtomWare",`<font color="#ff8080"><b>⚠ No options found</b></font> for <font color="#7db8ff"><b>{tostring(an.Name)}</b></font> :c`,3)
 at.Visible=false
 end
 end
@@ -6517,7 +6517,7 @@ if not(aa and ab~=nil and type(ab)=="table")then
 return G(
 function()
 return game:GetService"HttpService"
-:JSONDecode(readfile(`voidware_translations/LanguageFlags.json`))
+:JSONDecode(readfile(`atomware_translations/LanguageFlags.json`))
 end,
 10,
 function(ac,ad)
@@ -6530,11 +6530,11 @@ end
 )
 else
 G(function()
-if not isfolder"voidware_translations"then
-makefolder"voidware_translations"
+if not isfolder"atomware_translations"then
+makefolder"atomware_translations"
 end
 writefile(
-`voidware_translations/LanguageFlags.json`,
+`atomware_translations/LanguageFlags.json`,
 game:GetService"HttpService":JSONEncode(ab)
 )
 end,5)
@@ -6548,7 +6548,7 @@ d.LanguageFlags=aa
 local ab=shared.TargetLanguage and tostring(shared.TargetLanguage)
 or G(
 function()
-return readfile"voidware_translations/lang.txt"
+return readfile"atomware_translations/lang.txt"
 end,
 10,
 function(ab,ac)
@@ -6556,10 +6556,10 @@ if ab then
 return ac
 else
 pcall(function()
-if not isfolder"voidware_translations"then
-makefolder"voidware_translations"
+if not isfolder"atomware_translations"then
+makefolder"atomware_translations"
 end
-writefile("voidware_translations/lang.txt","en")
+writefile("atomware_translations/lang.txt","en")
 end)
 return"en"
 end
@@ -6599,7 +6599,7 @@ if not(ac and ad~=nil and type(ad)=="table")then
 return G(
 function()
 return game:GetService"HttpService"
-:JSONDecode(readfile(`voidware_translations/Languages.json`))
+:JSONDecode(readfile(`atomware_translations/Languages.json`))
 end,
 10,
 function(ae,af)
@@ -6612,11 +6612,11 @@ end
 )
 else
 G(function()
-if not isfolder"voidware_translations"then
-makefolder"voidware_translations"
+if not isfolder"atomware_translations"then
+makefolder"atomware_translations"
 end
 writefile(
-`voidware_translations/Languages.json`,
+`atomware_translations/Languages.json`,
 game:GetService"HttpService":JSONEncode(ad)
 )
 end,5)
@@ -6632,8 +6632,8 @@ function()
 if ab=="en"then
 return{}
 end
-if tostring(shared.environment)=="translator_env"and isfolder"voidware_translations"and E(`voidware_translations/{ab}.json`)then
-return decode(readfile(`voidware_translations/{ab}.json`))
+if tostring(shared.environment)=="translator_env"and isfolder"atomware_translations"and E(`atomware_translations/{ab}.json`)then
+return decode(readfile(`atomware_translations/{ab}.json`))
 end
 return decode(
 d.http_function(
@@ -6648,7 +6648,7 @@ if not(ac and ad~=nil and type(ad)=="table")then
 return G(
 function()
 return game:GetService"HttpService"
-:JSONDecode(readfile(`voidware_translations/{ab}.json`))
+:JSONDecode(readfile(`atomware_translations/{ab}.json`))
 end,
 10,
 function(ae,af)
@@ -6661,10 +6661,10 @@ end
 )
 else
 G(function()
-if not isfolder"voidware_translations"then
-makefolder"voidware_translations"
+if not isfolder"atomware_translations"then
+makefolder"atomware_translations"
 end
-writefile(`voidware_translations/{ab}.json`,game:GetService"HttpService":JSONEncode(ad))
+writefile(`atomware_translations/{ab}.json`,game:GetService"HttpService":JSONEncode(ad))
 end,5)
 shared[`TRANSLATION_API_LANGUAGE_CACHE_{tostring(ab)}`]=ad
 return ad
@@ -7438,7 +7438,7 @@ task.delay(1.3,function()
 aq()
 end)
 else
-d:CreateNotification("Vape","Click the upload icon on any of your configs to update them",5,"info")
+d:CreateNotification("AtomWare","Click the upload icon on any of your configs to update them",5,"info")
 ap("Click the 'Upload' icon to update a config",true)
 end
 end
@@ -7456,7 +7456,7 @@ end)
 
 aE.Activated:Connect(function()
 if not getgenv().username or not getgenv().password then
-d:CreateNotification("Vape","You must be logged in to update configs",6,"warning")
+d:CreateNotification("AtomWare","You must be logged in to update configs",6,"warning")
 return
 end
 
@@ -7469,7 +7469,7 @@ o:Tween(aE,TweenInfo.new(0.15),{
 BackgroundColor3=Color3.fromRGB(100,80,200),
 })
 revertToNormalMode()
-d:CreateNotification("Vape","Update mode cancelled",3,"info")
+d:CreateNotification("AtomWare","Update mode cancelled",3,"info")
 else
 
 flickerTextEffect(aE,true,"STOP UPDATING")
@@ -7764,12 +7764,12 @@ end)
 
 aW.Activated:Connect(function()
 if not checkWhitelistForRating()then
-d:CreateNotification("Vape","You must be whitelisted (Rank 1+) to rate configs",6,"warning")
+d:CreateNotification("AtomWare","You must be whitelisted (Rank 1+) to rate configs",6,"warning")
 return
 end
 
 if aO==0 then
-d:CreateNotification("Vape","Please select a star rating",5,"warning")
+d:CreateNotification("AtomWare","Please select a star rating",5,"warning")
 flickerTextEffect(aR,true,"Please select a rating!")
 task.wait(0.5)
 flickerTextEffect(aR,true,"Click a star to rate")
@@ -7777,11 +7777,11 @@ return
 end
 
 if not aQ then
-d:CreateNotification("Vape","Invalid config reference",5,"warning")
+d:CreateNotification("AtomWare","Invalid config reference",5,"warning")
 return
 end
 
-d:CreateNotification("Vape","Submitting rating...",4,"info")
+d:CreateNotification("AtomWare","Submitting rating...",4,"info")
 
 local aY=d.Libraries.whitelist~=nil and select(5,d.Libraries.whitelist:get(m.LocalPlayer))
 
@@ -7803,7 +7803,7 @@ Body=l:JSONEncode(aZ),
 end)
 
 if a_ and a0 and a0.StatusCode==200 then
-d:CreateNotification("Vape","Rating submitted successfully!",6,"info")
+d:CreateNotification("AtomWare","Rating submitted successfully!",6,"info")
 aG.Visible=false
 aJ:Fire()
 
@@ -7823,7 +7823,7 @@ if a2~=nil and type(a2)=="table"and a2.detail~=nil then
 a1=a2.detail
 end
 end
-d:CreateNotification("Vape","Failed to submit rating: "..a1,8,"warning")
+d:CreateNotification("AtomWare","Failed to submit rating: "..a1,8,"warning")
 end
 end)
 
@@ -7924,7 +7924,7 @@ Size=UDim2.new(1,-64,0,38),
 a0.Activated:Connect(function()
 if not checkWhitelistForRating()then
 d:CreateNotification(
-"Vape",
+"AtomWare",
 "You must be whitelisted (Rank 1+) to rate configs",
 6,
 "warning"
@@ -7951,7 +7951,7 @@ task.delay(1.3,function()
 aq()
 end)
 else
-d:CreateNotification("Vape","Click the star icon on any config to rate it",5,"info")
+d:CreateNotification("AtomWare","Click the star icon on any config to rate it",5,"info")
 ap("Click the 'Star' icon to rate a config",true)
 end
 end
@@ -7979,7 +7979,7 @@ o:Tween(aF,TweenInfo.new(0.15),{
 BackgroundColor3=Color3.fromRGB(200,160,20),
 })
 revertFromRatingMode()
-d:CreateNotification("Vape","Rating mode cancelled",3,"info")
+d:CreateNotification("AtomWare","Rating mode cancelled",3,"info")
 else
 
 flickerTextEffect(aF,true,"STOP RATING")
@@ -8340,12 +8340,12 @@ end)
 
 _.Activated:Connect(function()
 if not getgenv().username or not getgenv().password then
-d:CreateNotification("Vape","You must be logged in to delete configs",6,"warning")
+d:CreateNotification("AtomWare","You must be logged in to delete configs",6,"warning")
 return
 end
 al:Fire"Delete"
 
-d:CreateNotification("Vape","Fetching your uploaded configs...",4,"info")
+d:CreateNotification("AtomWare","Fetching your uploaded configs...",4,"info")
 ap("Fetching uploaded configs...",true)
 
 local a5,a6=pcall(function()
@@ -8377,7 +8377,7 @@ local a7=l:JSONDecode(a6.Body)
 aY=a7.configs or{}
 
 if#aY==0 then
-d:CreateNotification("Vape","You have no uploaded configs",5,"info")
+d:CreateNotification("AtomWare","You have no uploaded configs",5,"info")
 return
 end
 
@@ -8400,18 +8400,18 @@ ap("Couldn't fetch your configs :c",true)
 task.delay(0.5,function()
 aq()
 end)
-d:CreateNotification("Vape","Failed to fetch your configs: "..a7,8,"warning")
+d:CreateNotification("AtomWare","Failed to fetch your configs: "..a7,8,"warning")
 end
 end)
 
 W.Activated:Connect(function()
 if av then
 if not aZ then
-d:CreateNotification("Vape","Please select a config to delete",5,"warning")
+d:CreateNotification("AtomWare","Please select a config to delete",5,"warning")
 return
 end
 
-d:CreateNotification("Vape",`Deleting {aZ}...`,5,"info")
+d:CreateNotification("AtomWare",`Deleting {aZ}...`,5,"info")
 
 local a5,a6=pcall(function()
 return request{
@@ -8428,7 +8428,7 @@ place=tostring(d.Place or game.PlaceId)
 end)
 
 if a5 and a6 and a6.StatusCode==200 then
-d:CreateNotification("Vape",`Successfully deleted {aZ}`,6,"info")
+d:CreateNotification("AtomWare",`Successfully deleted {aZ}`,6,"info")
 L.Visible=false
 am:Fire()
 
@@ -8446,15 +8446,15 @@ if a8~=nil and type(a8)=="table"and a8.detail~=nil then
 a7=a8.detail
 end
 end
-d:CreateNotification("Vape","Delete failed: "..a7,8,"warning")
+d:CreateNotification("AtomWare","Delete failed: "..a7,8,"warning")
 end
 else
 if not T then
-d:CreateNotification("Vape","Please select a local profile first",5,"warning")
+d:CreateNotification("AtomWare","Please select a local profile first",5,"warning")
 return
 end
 if U.Text==""then
-d:CreateNotification("Vape","Config name is required",5,"warning")
+d:CreateNotification("AtomWare","Config name is required",5,"warning")
 flickerTextEffect(U,true,"Name Required!")
 task.wait(0.3)
 flickerTextEffect(U,true,"")
@@ -8463,16 +8463,16 @@ end
 
 local a5="atomware/profiles/"..T..d.Place..".txt"
 if not E(a5)then
-d:CreateNotification("Vape","Failed to read config file. Please choose different profile :c",6,"warning")
+d:CreateNotification("AtomWare","Failed to read config file. Please choose different profile :c",6,"warning")
 return
 end
 local a6,a7=pcall(readfile,a5)
 if not(a6 and a7~=nil)then
-d:CreateNotification("Vape","Failed to read config file. Please choose different profile :c",6,"warning")
+d:CreateNotification("AtomWare","Failed to read config file. Please choose different profile :c",6,"warning")
 return
 end
 
-d:CreateNotification("Vape","Publishing config...",5,"info")
+d:CreateNotification("AtomWare","Publishing config...",5,"info")
 
 local a8={
 username=getgenv().username,
@@ -8500,7 +8500,7 @@ if a9 and ba and ba.StatusCode==200 then
 local bb=ba.Body
 local bc=string.find(bb,"isOverwritten")and true or false
 d:CreateNotification(
-"Vape",
+"AtomWare",
 `Successfully published "{U.Text}"`
 ..(bc and" (overwritten)"or"")
 ..(O and" [Place Based]"or""),
@@ -8531,7 +8531,7 @@ task.delay(2,function()
 ap("Click on the config you want to upload",true)
 end)
 end
-d:CreateNotification("Vape","Failed to publish: "..bb,10,"warning")
+d:CreateNotification("AtomWare","Failed to publish: "..bb,10,"warning")
 end
 end
 end)
@@ -9161,7 +9161,7 @@ bE.Activated:Connect(function()
 if ay then
 if not checkWhitelistForRating()then
 d:CreateNotification(
-"Vape",
+"AtomWare",
 "You must be whitelisted (Rank 1+) to rate configs",
 6,
 "warning"
@@ -9190,7 +9190,7 @@ OnConfirm=function()
 local bG="atomware/profiles/"..bF..d.Place..".txt"
 if not E(bG)then
 d:CreateNotification(
-"Vape",
+"AtomWare",
 "Failed to read current profile config file",
 6,
 "warning"
@@ -9201,7 +9201,7 @@ end
 local bH,bI=pcall(readfile,bG)
 if not(bH and bI~=nil)then
 d:CreateNotification(
-"Vape",
+"AtomWare",
 "Failed to read current profile config file",
 6,
 "warning"
@@ -9210,7 +9210,7 @@ revertToNormalMode()
 return
 end
 
-d:CreateNotification("Vape",`Updating "{bm}"...`,5,"info")
+d:CreateNotification("AtomWare",`Updating "{bm}"...`,5,"info")
 
 local bJ={
 username=getgenv().username,
@@ -9237,7 +9237,7 @@ end)
 
 if bK and bL and bL.StatusCode==200 then
 d:CreateNotification(
-"Vape",
+"AtomWare",
 `Successfully updated "{bm}" with profile "{bF}"!`,
 8,
 "info"
@@ -9260,7 +9260,7 @@ if bN~=nil and type(bN)=="table"and bN.detail~=nil then
 bM=bN.detail
 end
 end
-d:CreateNotification("Vape","Failed to update: "..bM,10,"warning")
+d:CreateNotification("AtomWare","Failed to update: "..bM,10,"warning")
 revertToNormalMode()
 end
 end,
@@ -9277,7 +9277,7 @@ ConfirmText="DELETE",
 CancelText="CANCEL",
 OnConfirm=function()
 d:CreateNotification(
-"Vape",
+"AtomWare",
 (bD.ActionWord..' "%s"...'):format(bm),
 5,
 "info"
@@ -9307,7 +9307,7 @@ end)
 
 if bG and bH and bH.StatusCode==200 then
 d:CreateNotification(
-"Vape",
+"AtomWare",
 (bD.DoneWord..' "%s"'):format(bm),
 6,
 "info"
@@ -9325,7 +9325,7 @@ end
 end
 
 d:CreateNotification(
-"Vape",
+"AtomWare",
 (bD.FailWord..": %s"):format(bI),
 8,
 "warning"
@@ -9463,7 +9463,7 @@ d:Save(bD)
 writefile("atomware/profiles/"..bD..d.Place..".txt",bI)
 d:Load(true,bD)
 local bL=bJ and"Reinstalled"or"Downloaded"
-d:CreateNotification("Vape",`{bL} "{bm}" by @{bC.username}`,5,"info")
+d:CreateNotification("AtomWare",`{bL} "{bm}" by @{bC.username}`,5,"info")
 bB.Text="REINSTALL"
 bA=true
 local bM,bN,bO=d.GUIColor.Hue,d.GUIColor.Sat,d.GUIColor.Value
@@ -9471,7 +9471,7 @@ bB.BackgroundColor3=bA and n.Dark(Color3.fromHSV(bM,bN,bO),0.3)
 or Color3.fromHSV(bM,bN,bO)
 Z()
 else
-d:CreateNotification("Vape",`Failed to fetch config ({bm})`,10,"warning")
+d:CreateNotification("AtomWare",`Failed to fetch config ({bm})`,10,"warning")
 end
 end)
 task.wait(0.15)
@@ -9793,7 +9793,7 @@ d:Load(true,'default')
 local ay=Color3ToHex(Color3.fromHSV(d.GUIColor.Hue,d.GUIColor.Sat,d.GUIColor.Value))
 local az="#ffffff"
 local aA=([[Transferred Data from <font color="%s"><b>%s</b></font> to <font color="%s"><b>default</b></font> Profile]]):format(ay,tostring(ax),az)
-d:CreateNotification("Vape",aA,3)
+d:CreateNotification("AtomWare",aA,3)
 end,
 Tooltip="Transfers your current profile to the 'default' one",
 Visible=false,
@@ -9811,7 +9811,7 @@ OnConfirm=function(ax)
 if ax and ax~=""then
 for ay,az in d.Profiles do
 if tostring(az.Name)==ax then
-d:CreateNotification("Vape",`Profile {tostring(ax)} already exists!`,3)
+d:CreateNotification("AtomWare",`Profile {tostring(ax)} already exists!`,3)
 return
 end
 end
@@ -9819,7 +9819,7 @@ table.insert(d.Profiles,{Name=ax,Bind={}})
 d:Save(ax,true)
 d:Load(ax)
 else
-d:CreateNotification("Vape","No Profile Name given",3)
+d:CreateNotification("AtomWare","No Profile Name given",3)
 end
 end,
 }
@@ -9862,7 +9862,7 @@ end,
 OnCancel=function()end
 }
 end,
-Tooltip="This will set your profile to the default settings of Vape",
+Tooltip="This will set your profile to the default settings of AtomWare",
 BackgroundTransparency=1,
 },ap,{Options={}})
 end
@@ -10272,7 +10272,7 @@ end)
 aA.Activated:Connect(function()
 if not table.find(ai.List,az.Text)then
 if az.Text==""or az.Text=="Invalid Name!"then
-d:CreateNotification("Vape","You need to specify a value!",3)
+d:CreateNotification("AtomWare","You need to specify a value!",3)
 flickerTextEffect(az,true,"Invalid Name!")
 task.delay(0.5,function()
 flickerTextEffect(az,true,"")
@@ -11901,7 +11901,7 @@ if E(am)then
 ak=loadJson(am)
 if not ak then
 ak={Categories={}}
-ah:CreateNotification("Vape","Failed to load GUI settings.",10,"alert")
+ah:CreateNotification("AtomWare","Failed to load GUI settings.",10,"alert")
 al=false
 end
 ah.Profile=aj or ak.Profile or"default"
@@ -11975,7 +11975,7 @@ end)
 local ao=loadJson("atomware/profiles/"..ah.Profile..ah.Place..".txt")
 if not ao then
 ao={Categories={},Modules={},Legit={}}
-ah:CreateNotification("Vape","Failed to load "..ah.Profile.." profile.",10,"alert")
+ah:CreateNotification("AtomWare","Failed to load "..ah.Profile.." profile.",10,"alert")
 if ah.Profile~="default"then
 
 pcall(function()
@@ -12171,7 +12171,7 @@ an,
 ao
 )
 
-d:CreateNotification("Vape",ap,10,"warning")
+d:CreateNotification("AtomWare",ap,10,"warning")
 end
 end
 end
@@ -12302,7 +12302,7 @@ writefile("atomware/profiles/"..ah.Profile..ah.Place..".txt",l:JSONEncode(al))
 end
 
 function d.DisableSaving(ah)
-d:CreateNotification("Vape","Saving is disabled due to an error in AtomWare!",30,"warning")
+d:CreateNotification("AtomWare","Saving is disabled due to an error in AtomWare!",30,"warning")
 ah.Loaded=false
 ah.Save=function()end
 end
@@ -12654,10 +12654,10 @@ if aq then
 shared.TargetLanguage=aq
 
 pcall(function()
-if not isfolder"voidware_translations"then
-makefolder"voidware_translations"
+if not isfolder"atomware_translations"then
+makefolder"atomware_translations"
 end
-writefile("voidware_translations/lang.txt",tostring(shared.TargetLanguage))
+writefile("atomware_translations/lang.txt",tostring(shared.TargetLanguage))
 end)
 
 local ar=aa[aq]or""
@@ -12694,14 +12694,14 @@ true
 )()
 end
 end,
-Tooltip="This will set your profile to the default settings of Vape",
+Tooltip="This will set your profile to the default settings of AtomWare",
 }
 am:CreateButton{
 Name="Self destruct",
 Function=function()
 d:Uninject()
 end,
-Tooltip="Removes vape from the current game",
+Tooltip="Removes AtomWare from the current game",
 }
 am:CreateButton{
 Name="Reinject",
@@ -12722,7 +12722,7 @@ true
 )()
 end
 end,
-Tooltip="Reloads vape for debugging purposes",
+Tooltip="Reloads AtomWare for debugging purposes",
 }
 
 d:CreateCategory{
@@ -13323,7 +13323,7 @@ end,
 }
 local aG=aw:CreateToggle{
 Name="Watermark",
-Tooltip="Renders a vape watermark",
+Tooltip="Renders an AtomWare watermark",
 Default=true,
 NoDefaultCallback=true,
 Function=function()
